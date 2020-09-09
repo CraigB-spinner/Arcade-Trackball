@@ -22,10 +22,10 @@ Note: resistor used in series to limit current around 10mA (390Ω	- 470Ω)<br/>
 Buttons 1-6, plus 9-select(coin), and 10-start(player)<br/>
 Pin |Data |Button/wire  |Code  
 --- |---- |------------ |----  
-0   |D1   |Y<sub>A</sub> trackball |PinD   
-1   |D0   |Y<sub>B</sub> trackball |PinC   
-2   |D2   |X<sub>B</sub> trackball |PinA  
-3   |D3   |X<sub>A</sub> trackball |PinB  
+0   |D1   |Y<sub>A</sub> trackball-Yellow |PinD   
+1   |D0   |Y<sub>B</sub> trackball-Green |PinC   
+2   |D2   |X<sub>B</sub> trackball-Blue |PinA  
+3   |D3   |X<sub>A</sub> trackball-Purple |PinB  
 4   |D4   |Button 1 - X
 5   |D5   |Button 2 - A
 6   |D6   |Button 3 - B
@@ -34,8 +34,8 @@ Pin |Data |Button/wire  |Code
 9   |D9   |Button 6 - R
 10  |D10  |Button 9 - Select
 15  |D15  |Button 10 - Start
-Gnd |     |Gnd
-Vcc |     |+5v  <br/>
+Gnd |     |Gnd - Black
+Vcc |     |+5v - Red  <br/>
 
 I am using Xbox A/B, X/Y configuration, Nintendo protocol is B/A, Y/X reversed controls (Japanese cultural differences)  
 You can assign buttons to any assignment in RetroArch but it is best to pick a consistent pattern across all controllers to avoid confusion.  <br/>
