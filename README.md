@@ -1,7 +1,8 @@
 # Arcade-Trackball
 Arcade Trackball - based off Spinner version 2
 
-
+**Code to follow**  
+New additional interrupts, movement y-axis processing and both x/y axes handling.<br/><br/>
 This is an Arduino Pro Micro clone, arcade trackball, with 8 buttons (up to 10) for use with MAME or any other emulator which can use the X axis and y-axis of the mouse as a trackball controller. This code should also work on any board which uses the ATmega32U4 as long as the port pins are mapped to the same "digital pins" as the Micro.  
 To construct this you will need an older style non-PS/2 trackball which can operate at 5v and some momentary switch buttons plus Arduino micro controller. 
 This trackball uses the red Opto boards A052-1011-00, and not the green PS/2 Opto board pair.<br/> 
@@ -37,7 +38,7 @@ Pin |Data |Button/wire  |Code
 Gnd |     |Gnd - Black
 Vcc |     |+5v - Red  <br/>
 
-I believe the trackball encoder A/B output is reversed as you move the ball and not the roller directly. The code has been tested and trackball moves in the proper direction, so, the code was left as is. The Opto encoder board is also used for steerwheel devices.<br/>I am using Xbox A/B, X/Y configuration, Nintendo protocol is B/A, Y/X reversed controls (Japanese cultural differences)  
+I believe the trackball encoder A/B output is reversed as you move the ball and not the roller directly. The code has been tested and trackball moves in the proper direction, so, the code was left as is. The Opto encoder board is also used for steerwheel devices.<br/>I am using Xbox A/B, X/Y configuration, Nintendo protocol is B/A, Y/X reversed controls (Japanese cultural differences). 
 You can assign buttons to any assignment in RetroArch but it is best to pick a consistent pattern across all controllers to avoid confusion.  <br/>
  
 **Extra expenses:**  
