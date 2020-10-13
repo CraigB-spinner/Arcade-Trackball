@@ -1,1 +1,1 @@
-[Buttons](pictures/Buttons.jpg)
+[Buttons](Finished%20pictures/Buttons.jpg)
