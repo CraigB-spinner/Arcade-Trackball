@@ -50,5 +50,10 @@ Sanwa - 2.8mm(0.110") or Suzo-Happ - 4.8mm(0.187") female spade crimp connectors
 **For the more observant** in pictures "Inside Spaghetti" and "Arduino Beauty Shot" there's an extra wire harness and aligator clip hooking to Gnd. TX0 & RX1 are wired to the y-axis of a proto-type [Trackball](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) setup. Arduino code has been modified, tested and confirmed to work. No stutter or lag as using only USB protocol to RetroPi. No PS/2 Protocol overhead. I will be working on enclosure to finish new controller for games like **Centipede**, **Marble Madness**, **Crystal Castles**, and others.<br/>
 
 **More pictures:**   
-The assembled pictures before adding clear finish to antique oak wood box "See-thru-Top", "Bottom-side", "ATmega32U4 wired inside", "Buttons", "Trackball".
+The assembled pictures before adding clear finish to antique oak wood box 
+"[See-thru-Top](Finished%20pictures/See-thru-Top.jpg)", 
+"[Bottom-side](Finished%20pictures/Bottom-side.jpg)", 
+"[ATmega32U4 wired inside](Finished%20pictures/ATmega32U4%20wired%20inside.jpg)", 
+"[Buttons](Finished%20pictures/Buttons.jpg)", 
+"[Trackball](Finished%20pictures/Trackball.jpg)".
 The top, I used tinted Polycarbonate sheet (0.120" thick) found at a local surplus store and bottom from wood sitting in my parents basement from early 60's sourced from Stelco for handling steel. I later found out the wood was very dense, hard oak 100 to 120 years old from sapling. I snapped a few #4 screws while assembling which staled progress. Bottom panel is 1/4" - 3/16" plywood insert. 
