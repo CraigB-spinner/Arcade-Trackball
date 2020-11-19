@@ -22,6 +22,7 @@ Vcc (+5V) and Gnd output wires red and black<br/>
 Trackball A(X<sub>A</sub>), B(X<sub>B</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>) output wires purple, blue, yellow and green. see picture <br/>
 Note: resistor used in series to limit current around 10mA (390Ω	- 470Ω)<br/>
 Buttons 1-6, plus 9-select(coin), and 10-start(player)<br/>
+
 Pin |Data |Button/wire  |Code  
 --- |---- |------------ |----  
 0   |D1   |Y<sub>A</sub> trackball - Yellow |PinD   
