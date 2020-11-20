@@ -23,12 +23,12 @@ Trackball A(X<sub>A</sub>), B(X<sub>B</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>
 Note: resistor used in series to limit current around 10mA (390Ω	- 470Ω)<br/>
 Buttons 1-6, plus 9-select(coin), and 10-start(player)<br/>
 
-Pin |Data |Button/wire  |Code  
---- |---- |------------ |----  
-0   |D1   |Y<sub>A</sub> trackball - Yellow |PinD  
-1   |D0   |Y<sub>B</sub> trackball - Green |PinC  
-2   |D2   |X<sub>B</sub> trackball - Blue |PinA  
-3   |D3   |X<sub>A</sub> trackball - Purple |PinB  
+Pin |Data |Button/wire  |Code
+--- |---- |------------ |----
+0   |D1   |Y<sub>A</sub> trackball - Yellow |PinD
+1   |D0   |Y<sub>B</sub> trackball - Green |PinC
+2   |D2   |X<sub>B</sub> trackball - Blue |PinA
+3   |D3   |X<sub>A</sub> trackball - Purple |PinB
 4   |D4   |Button 1 - X
 5   |D5   |Button 2 - A
 6   |D6   |Button 3 - B
