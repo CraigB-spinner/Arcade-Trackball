@@ -6,7 +6,7 @@ At sub $10 USD, it is a substitute to Ultimarc's U-HID Nano @ $35 + shipping - Y
 New additional interrupts, movement y-axis processing and both x/y axes handling.<br/>Oct 12/20: Code now availble, see extra pictures of finished Trackball box.<br/><br/>
 This is an Arduino Pro Micro clone, arcade trackball, with 8 buttons (up to 10) for use with MAME or any other emulator which can use the X axis and y-axis of the mouse as a trackball controller. This code should also work on any board which uses the ATmega32U4 as long as the port pins are mapped to the same "digital pins" as the [Pro Micro](/Pics/Arduino%20Pro%20Micro%20Atmega32u4.jpg).  
 To construct this you will need an older style non-PS/2 trackball which can operate at 5v and some momentary switch buttons plus Arduino micro controller. 
-This trackball [(RA-TRACKBALL-2)](/Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg) uses the [red Opto boards](/Pics/Red_Board_Pinout.jpg) A052-1011-00, and not the green PS/2 Opto board pair.<br/> 
+This [trackball](/Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), RA-TRACKBALL-2, uses the [red Opto boards](/Pics/Red_Board_Pinout.jpg), A052-1011-00, and not the green PS/2 Opto board pair.<br/> 
 [**TrackBall** used](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)<br/>
 [**ATmega32U4** used](https://www.amazon.ca/gp/product/B01N4TVIQX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)<br/>
 <br/>
