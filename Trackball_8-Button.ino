@@ -1,4 +1,4 @@
-/*   Arcade Trackball/Spinner v2.01
+/*   Arcade Trackball/Spinner v2.02
 *    (new trackball/mouse dual x and y axis - added pinC & pinD - RX1/PD2, TX0/PD3 data pins)
 *    Copyright 2020 Craig B - based on Spinner code from early June 2019 
 *                   Craig B - Updated 70% of code, 
@@ -6,6 +6,7 @@
 *                             Optimized code speed by changing if logic to case statement logic for Button validation of port bits.
 *                   Craig B - Added code for spinner movement NORM/ACCS/ACCX - End of June 2019         
 *                   Craig B - Added code for mouse y-axis and interupt processing from late Aug 2020
+*                   Craig B - Added ACCSX code for mouse larger movement for both axes late Nov 2020 (issue with mouse sensitivity in MAME)
 *    
 *    This program is free software: you can redistribute it and/or modify
 *    it under the terms of the GNU General Public License as published by
@@ -44,6 +45,8 @@
 //#define NORM   //Mouse movement Normal; every interrupt processed; maybe lag in fast movement, 2 pulse = 2 move
 //#define DROP   //Mouse movement Drop; drop extra interrupts processed; smooth movement, no lag, 2 - 2n+1 pulse = 1 move
 #define ACCS   //Mouse movement Accelerated; every interrupt processed but accelerated movement, no lag x1, 1 pulse = 1 move 
+#define ACCSX 1   //Mouse movement Accelerated; every interrupt processed but 2x accelerated movement, no lag x1, 1 pulse = 2 move (use with ACCS)
+//#define ACCSX 2   //Mouse movement Accelerated; every interrupt processed but 4x accelerated movement, no lag x1, 1 pulse = 4 move (use with ACCS)
 //#define ACCM   //Mouse movement Accelerated; every interrupt processed but accelerated movement, no lag x2, 2 pulse = 1 move
 //#define ACCX   //Mouse movement Accelerated; every interrupt processed but accelerated movement, no lag x4, 4 pulse = 1 move
 
@@ -245,7 +248,13 @@ void loop(){
   //If the encoder has moved 1 or more transitions move the mouse in the appropriate direction 
   //and update the position variable to reflect that we moved the mouse. Accelerated move.
   if(rotPositionX != 0 || rotPositionY != 0) {
+#ifdef ACCSX
+    rotMultiX = rotPositionX << ACCSX;
+    rotMultiY = rotPositionY << ACCSX;
+    Mouse.move(rotMultiX,rotMultiY,0);
+#else
     Mouse.move(rotPositionX,rotPositionY,0);
+#endif 
     rotPositionX = 0;
     rotPositionY = 0;
   }
