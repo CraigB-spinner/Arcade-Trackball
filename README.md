@@ -14,7 +14,7 @@ This [trackball](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), RA-
 
 You will also need the Arduino joystick library available at: https://github.com/MHeironimus/ArduinoJoystickLibrary<br/><br/>
 
-This device will be detected as both mouse and joystick/gamepad. The joystick only has X and Y axes which we don't use. At least one axis is needed by the library to declare the joystick and it was found that 2 were required for the controller to be detected by RetroPi. We just center the X and Y axes in setup() and forget about them. The trackball controls the mouse X & y axes which is by default mapped to the mouse in MAME (don't forget to enable the mouse in MAME under advanced options!). The buttons will work as regular gamepad/joystick buttons. The 3" trackball is attached to a 24 slot wheel with gear(roller) ratio of about x7 (3.000"/0.425") = 169.412 slots/rev and  677.65 pulses/rev This is less than a spinner 600p/r or 2400 pulses or half effective movement in the micro controller software. Hand movement of 9.42"/rev.  
+This device will be detected as both mouse and joystick/gamepad. The joystick only has X and Y axes which we don't use. At least one axis is needed by the library to declare the joystick and it was found that 2 were required for the controller to be detected by RetroPie. We just center the X and Y axes in setup() and forget about them. The trackball controls the mouse X & y axes which is by default mapped to the mouse in MAME (don't forget to enable the mouse in MAME under advanced options!). The buttons will work as regular gamepad/joystick buttons. The 3" trackball is attached to a 24 slot wheel with gear(roller) ratio of about x7 (3.000"/0.425") = 169.412 slots/rev and  677.65 pulses/rev This is less than a spinner 600p/r or 2400 pulses or half effective movement in the micro controller software. Hand movement of 9.42"/rev.  
 The code uses the Atmega32u4 ports directly because that's faster than using digitalRead/Write. No button debouncing is setup, but can be added depending on your hardware issues.<br/><br/>
 
 **Extra info:**<br/>
@@ -52,9 +52,9 @@ Sanwa - 2.8mm(0.110") or Suzo-Happ - 4.8mm(0.187") female spade crimp connectors
 **For the more observant** in pictures 
 "[Inside Spaghetti](Special%20Testing%20Pics/Inside%20spaghetti.jpg)" and 
 "[Arduino Beauty Shot](Special%20Testing%20Pics/Arduino%20beauty%20shot.jpg)" 
-there's an extra wire harness and aligator clip hooking to Gnd. TX0 & RX1 are wired to the y-axis of a proto-type [Trackball](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) setup. Arduino code has been modified, tested and confirmed to work. No stutter or lag as using only USB protocol to RetroPi. No PS/2 Protocol overhead. I will be working on enclosure to finish new controller for games like **Centipede**, **Marble Madness**, **Crystal Castles**, and others.  
+there's an extra wire harness and aligator clip hooking to Gnd. TX0 & RX1 are wired to the y-axis of a proto-type [Trackball](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) setup. Arduino code has been modified, tested and confirmed to work. No stutter or lag as using only USB protocol to RetroPie. No PS/2 Protocol overhead. I will be working on enclosure to finish new controller for games like **Centipede**, **Marble Madness**, **Crystal Castles**, and others.  
 
-RetroPi [laggy trackball](laggy_mouse.md) issues  
+RetroPie [laggy trackball](laggy_mouse.md) issues  
 
 **More pictures:**   
 The assembled pictures before adding clear finish to antique oak wood box 
