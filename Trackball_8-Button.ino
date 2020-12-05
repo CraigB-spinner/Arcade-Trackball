@@ -84,7 +84,8 @@ int lastButtonState[maxBut] = {1,1,1,1,1,1,0,0,1,1};
 void setup() {
   //No need to set the pin modes with DDRx = DDRx | 0b00000000 as we're using all input and that's the initial state of the pins
   
-  //Use internal input resistors for all the pins we're using  
+  //Use internal input resistors for all the pins we're using - pull high resistor, when button pressed (short to ground) input on pin is pulled low.
+  //Digital pin D# corresponds to silk screen on micro-controller board, (#) corresponds to port bit internal use MSD(7)-to-LSD(0) - you assign button # in code
 //PORTD = 0b10010011; //Digital pins D2(1), D3(0), D4(4), and D6(7). Spinner x-axis only, and (Button 1 & 3)
   PORTD = 0b10011111; //Digital pins D2(1), D3(0), D0(2), D1(3), D4(4), and D6(7). Trackball x/y-axis, and (Button 1 & 3)
   PORTB = 0b01110010; //Digital pins D8(4), D9(5), D10(6), and D15(1). D14(3), D16(2) requires PB0 set high(master). (Button 5, 6, 9 & 10)
