@@ -327,6 +327,13 @@ void loop(){
     if(currentButtonState != lastButtonState[button]) {
       Joystick.setButton(button, !currentButtonState);
 //    //add if button and state logic to control Mouse.press() or Mouse.release() activity
+//      if (button == 4) { 
+//        if (currentButtonState == 1) {
+//          Mouse.press(MOUSE_LEFT);
+//        } else {
+//          Mouse.release(MOUSE_LEFT);
+//        }
+//      }      
 //      if (button == 5) { 
 //        if (currentButtonState == 1) {
 //          Mouse.press(MOUSE_RIGHT);
