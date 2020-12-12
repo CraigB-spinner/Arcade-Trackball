@@ -33,6 +33,26 @@
 *    The first two numbers are the vendor ID 16c0 and product ID 05e1.
 */
 
+// Port Bit/Pin layout   
+//      Bit - 76543210 - Silk screen ## - Micro-Controller
+#define xPB3 0b00001000 //Digital Pin 0  - Micro/PRO Micro - RX,  INT2
+#define xPB2 0b00000100 //Digital Pin 1  - Micro/PRO Micro - TX,  INT3
+#define xPB1 0b00000010 //Digital Pin 2  - Micro/PRO Micro - SDA, INT0
+#define xPB0 0b00000001 //Digital Pin 3  - Micro/PRO Micro - SCL, INT1
+#define xPD4 0b00010000 //Digital Pin 4  - Micro/PRO Micro
+#define xPC6 0b01000000 //Digital Pin 5  - Micro/PRO Micro
+#define xPD7 0b10000000 //Digital Pin 6  - Micro/PRO Micro
+#define xPE6 0b01000000 //Digital Pin 7  - Micro/PRO Micro
+#define xPB4 0b00010000 //Digital Pin 8  - Micro/PRO Micro
+#define xPB5 0b00100000 //Digital Pin 9  - Micro/PRO Micro
+#define xPB6 0b01000000 //Digital Pin 10 - Micro/PRO Micro
+#define xPB7 0b10000000 //Digital Pin 11 - Micro
+#define xPD6 0b01000000 //Digital Pin 12 - Micro
+#define xPC7 0b10000000 //Digital Pin 13 - Micro
+#define xPB3 0b00001000 //Digital Pin 14 - PRO Micro
+#define xPB1 0b00000010 //Digital Pin 15 - PRO Micro
+#define xPB2 0b00000100 //Digital Pin 16 - PRO Micro
+
 //   Arcade Trackball/Mouse requires ACCS movement.
 //   axis wheel is 24T with 3" ball, 0.425" roller -> 24 x (3000/425) = 169.412  holes/revs
 //   4 edge transistions Hi/Low and Low/Hi x 2 sensors per axis = 169.412 x 4 = 677.647 pulses/revs 
@@ -291,33 +311,45 @@ void loop(){
   }
 #endif 
 
-  //Iterate through the 10 buttons (0-9) assigning the current state of the pin for each button, HIGH(0b00000001) or LOW(0b00000000), to the currentState variable
+  //Iterate through the 10 buttons (0-9) assigning the current digital state of pin for each button, 
+  //HIGH(0b00000001) or LOW(0b00000000), to currentState variable. 
+  //Note: Pro Micro boards use various ports to access different digital pins. 
+  //Buttons 1-6, plus 9-select(coin), and 10-start(player) used; buttons 7 & 8 unused
+  //Using digital pins 4, 5, 6, 7, 8, 9, 10, and 15 on Pro Micro board. See silk screening.
+  //Pins 16 and 14 are free to use.
+  //Pins 0, 1, 2 and 3 are used for trackball rotary output as they are interrupt driven.
   int button = 0;
   do {
     switch ( button ) {
       case 0:  //on digital pin 4, PD4 - Arcade Button 1
-        currentButtonState = (PIND & 0b00010000) >> 4;
+        currentButtonState = (PIND & xPD4) >> 4;
         break;
       case 1:  //on digital pin 5, PC6 - Arcade Button 2
-        currentButtonState = (PINC & 0b01000000) >> 6;
+        currentButtonState = (PINC & xPC6) >> 6;
         break;
       case 2:  //on digital pin 6, PD7 - Arcade Button 3
-        currentButtonState = (PIND & 0b10000000) >> 7;
+        currentButtonState = (PIND & xPD7) >> 7;
         break;
       case 3:  //on digital pin 7, PE6 - Arcade Button 4
-        currentButtonState = (PINE & 0b01000000) >> 6;
+        currentButtonState = (PINE & xPE6) >> 6;
         break;
       case 4:  //on digital pin 8, PB4 - Arcade Button 5
-        currentButtonState = (PINB & 0b00010000) >> 4;
+        currentButtonState = (PINB & xPB4) >> 4;
         break;
       case 5:  //on digital pin 9, PB5 - Arcade Button 6
-        currentButtonState = (PINB & 0b00100000) >> 5;
+        currentButtonState = (PINB & xPB5) >> 5;
         break;
+//      case 6:  //on digital pin 16, PB2 - Special Axis Button (internal function) - requires PB0 set to master or high
+//        currentButtonState = (PINB & xPB2) >> 2;
+//        break; 
+//      case 7:  //on digital pin 14, PB3 - 2nd Special Button 
+//        currentButtonState = (PINB & xPB3) >> 3;
+//        break; 
       case 8:  //on digital pin 10, PB6 - COIN/Select Button 9
-        currentButtonState = (PINB & 0b01000000) >> 6;
+        currentButtonState = (PINB & xPB6) >> 6;
         break;
       case 9:  //on digital pin 15, PB1 - PLAYER/Start Button 10
-        currentButtonState = (PINB & 0b00000010) >> 1;
+        currentButtonState = (PINB & xPB1) >> 1;
         break; 
       default: //Extra digital pins 16, PB2 + PB0(master=hi) and 14, PB3
         currentButtonState = 0b00000000;
@@ -326,22 +358,22 @@ void loop(){
     //If the current state of the pin for each button is different than last time, update the joystick button state
     if(currentButtonState != lastButtonState[button]) {
       Joystick.setButton(button, !currentButtonState);
-//    //add if button and state logic to control Mouse.press() or Mouse.release() activity
+//    - add if button and state logic to control Mouse.press() or Mouse.release() activity
+//    - button press state is low, and not pressed is high
 //      if (button == 4) { 
 //        if (currentButtonState == 1) {
-//          Mouse.press(MOUSE_LEFT);
-//        } else {
 //          Mouse.release(MOUSE_LEFT);
+//        } else {
+//          Mouse.press(MOUSE_LEFT);
 //        }
 //      }      
 //      if (button == 5) { 
 //        if (currentButtonState == 1) {
-//          Mouse.press(MOUSE_RIGHT);
-//        } else {
 //          Mouse.release(MOUSE_RIGHT);
+//        } else {
+//          Mouse.press(MOUSE_RIGHT);
 //        }
 //      }
-    
     }
       
     //Save the last button state for each button for next time
