@@ -4,7 +4,9 @@ Arcade Trackball - based off Spinner version 2
 ![Trackball](Pics/IMG_3843.jpg)  
 **Using an Arduino Pro Micro - DIY Trackball Controller**  
 At sub $10 USD, it is a substitute to Ultimarc's U-HID Nano @ $35 + shipping - You do the HID device coding...<br/><br/> **Code to follow**  
-New additional interrupts, movement y-axis processing and both x/y axes handling.<br/>Oct 12/20: Code now availble, see extra pictures of finished Trackball box.<br/><br/>
+New additional interrupts, movement y-axis processing and both x/y axes handling.<br/>
+Oct 12/20: Code now availble, see extra pictures of finished Trackball box.  
+Dec 16/20: Added code for x-axis disable (Golf game driver - no hook/slice cheat)<br/><br/>
 This project uses an Arduino Pro Micro clone, arcade trackball, with 8 buttons (up to 10) for use with MAME or any other emulator which can use x-axis and y-axis of mouse device as a trackball controller. Code should work on any board using an ATmega32U4 as long as the port pins are mapped to the same "digital pins" as the [Pro Micro](Pics/Arduino%20Pro%20Micro%20Atmega32u4.jpg).  
 To construct, you will need an older non-PS/2 style trackball which can operate at 5v along with some momentary switches plus Arduino micro controller. 
 This [trackball](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), RA-TRACKBALL-2, uses the [red Opto boards](Pics/Red_Board_Pinout.jpg), A052-1011-00, and not the green PS/2 Opto board pair.<br/> 
