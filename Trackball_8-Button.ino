@@ -7,6 +7,7 @@
 *                   Craig B - Added code for spinner movement NORM/ACCS/ACCX - End of June 2019         
 *                   Craig B - Added code for mouse y-axis and interupt processing from late Aug 2020
 *                   Craig B - Added ACCSX code for mouse larger movement for both axes late Nov 2020 (issue with mouse sensitivity in MAME)
+*                   Craig B - Added code for x-axis disable (golf drive - no hook/slice cheat) from mid Dec 2020   
 *    
 *    This program is free software: you can redistribute it and/or modify
 *    it under the terms of the GNU General Public License as published by
@@ -60,7 +61,7 @@
 //
 //   Arcade Spinner/Mouse requires ACCM movement.
 //   2400 pulses/revs divide by two
-
+    
 //Mouse movement - pick one to compile specific code inside loop()
 //#define NORM   //Mouse movement Normal; every interrupt processed; maybe lag in fast movement, 2 pulse = 2 move
 //#define DROP   //Mouse movement Drop; drop extra interrupts processed; smooth movement, no lag, 2 - 2n+1 pulse = 1 move
@@ -73,6 +74,7 @@
 #define pinA 2    //The pins that the trackball/mouse x-axis encoder's A and B terminals are connected to.
 #define pinB 3
 #define maxBut 10
+//#define axisEnable 6  //Special x-axis disable button (button offset: 0 thru 9) - comment out if 'x-axis disable' feature not required by you.
 #define pinC 0    //The pins that the trackball/mouse y-axis encoder's C and D terminals are connected to.
 #define pinD 1
 
@@ -92,12 +94,19 @@ volatile int previousReadingY = 0;
 //Keeps track of how much the encoder has been moved
 volatile int rotPositionX = 0;
 volatile int rotMultiX = 0;
+#ifdef axisEnable
+volatile int xAxis = 1; 
+#endif
 volatile int rotPositionY = 0;
 volatile int rotMultiY = 0;
 
 // Last state of 10 the buttons (update array for your maxBut buttons)
-int lastButtonState[maxBut] = {1,1,1,1,1,1,0,0,1,1};
-
+// Since Button Port Bits are set to 1 to activate(pull-hi input resistors), the press state is low, and not pressed is high.
+#ifdef axisEnable
+  int lastButtonState[maxBut] = {1,1,1,1,1,1,1,0,1,1};
+#else
+  int lastButtonState[maxBut] = {1,1,1,1,1,1,0,0,1,1};
+#endif
 
 
 //---------------------------------------------------------------------
@@ -107,10 +116,14 @@ void setup() {
   //Use internal input resistors for all the pins we're using - pull high resistor, when button pressed (short to ground) input on pin is pulled low.
   //Digital pin D# corresponds to silk screen on micro-controller board, (#) corresponds to port bit internal use MSD(7)-to-LSD(0) - you assign button # in code
 //PORTD = 0b10010011; //Digital pins D2(1), D3(0), D4(4), and D6(7). Spinner x-axis only, and (Button 1 & 3)
-  PORTD = 0b10011111; //Digital pins D2(1), D3(0), D0(2), D1(3), D4(4), and D6(7). Trackball x/y-axis, and (Button 1 & 3)
-  PORTB = 0b01110010; //Digital pins D8(4), D9(5), D10(6), and D15(1). D14(3), D16(2) requires PB0 set high(master). (Button 5, 6, 9 & 10)
-  PORTC = 0b01000000; //Digital pin D5(6). (Button 2)
-  PORTE = 0b01000000; //Digital pin D7(6). (Button 4)
+  PORTD = 0b10011111; //Digital pins D2(1), D3(0), D0(2), D1(3), D4(4), and D6(7). - Trackball x/y-axis, and (Button 1 & 3)
+#ifdef axisEnable
+  PORTB = 0b01110111; //Digital pins D8(4), D9(5), D10(6), D15(1), and D16(2). D14(3). D16 requires PB0 set high(master). - (Button 5, 6, 9 & 10)
+#else
+  PORTB = 0b01110010; //Digital pins D8(4), D9(5), D10(6), and D15(1). D14(3), D16(2) requires PB0 set high(master). - (Button 5, 6, 9 & 10)
+#endif
+  PORTC = 0b01000000; //Digital pin D5(6). - (Button 2)
+  PORTE = 0b01000000; //Digital pin D7(6). - (Button 4)
 //PORTF = 0b11000000; //Digital pins A0(7) & A1(6). A2(5), A3(4) 
 
   //Start the joystick
@@ -161,7 +174,11 @@ void pinChangeX() {
      combinedReadingX == 0b1011 ||
      combinedReadingX == 0b1101 || 
      combinedReadingX == 0b0100) {
+#ifdef axisEnable
+     rotPositionX += (xAxis);          //update the position of the encoder
+#else
      rotPositionX++;                   //update the position of the encoder
+#endif
   }
 
   //Rotate to the left, Counter Clockwise
@@ -170,7 +187,11 @@ void pinChangeX() {
      combinedReadingX == 0b0111 ||
      combinedReadingX == 0b1110 ||
      combinedReadingX == 0b1000) {
+#ifdef axisEnable
+     rotPositionX -= (xAxis);          //update the position of the encoder
+#else
      rotPositionX--;                   //update the position of the encoder
+#endif
   }
 
   //Save the previous state of the A and B terminals for next time
@@ -339,9 +360,11 @@ void loop(){
       case 5:  //on digital pin 9, PB5 - Arcade Button 6
         currentButtonState = (PINB & xPB5) >> 5;
         break;
-//      case 6:  //on digital pin 16, PB2 - Special Axis Button (internal function) - requires PB0 set to master or high
-//        currentButtonState = (PINB & xPB2) >> 2;
-//        break; 
+#ifdef axisEnable
+      case 6:  //on digital pin 16, PB2 - Special Axis Button (internal function) - requires PB0 set to master or high
+        currentButtonState = (PINB & xPB2) >> 2;
+        break; 
+#endif
 //      case 7:  //on digital pin 14, PB3 - 2nd Special Button 
 //        currentButtonState = (PINB & xPB3) >> 3;
 //        break; 
@@ -357,6 +380,11 @@ void loop(){
     }
     //If the current state of the pin for each button is different than last time, update the joystick button state
     if(currentButtonState != lastButtonState[button]) {
+#ifdef axisEnable
+      if (button == axisEnable ) { //change x-axis enable status
+        xAxis = !xAxis;
+      } else
+#endif
       Joystick.setButton(button, !currentButtonState);
 //    - add if button and state logic to control Mouse.press() or Mouse.release() activity
 //    - button press state is low, and not pressed is high
@@ -366,7 +394,7 @@ void loop(){
 //        } else {
 //          Mouse.press(MOUSE_LEFT);
 //        }
-//      }      
+//      }
 //      if (button == 5) { 
 //        if (currentButtonState == 1) {
 //          Mouse.release(MOUSE_RIGHT);
