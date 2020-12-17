@@ -47,19 +47,20 @@ Vcc |     |+5v - Red  <br/>
 
 I believe the trackball encoder A/B output is reversed as you move the ball and not the roller directly. The code has been tested and trackball moves in the proper direction, so, the code was left as is. The Opto encoder board is also used for steerwheel devices.<br/>I am using Xbox A/B, X/Y configuration, Nintendo protocol is B/A, Y/X reversed controls (Japanese cultural differences). 
 You can assign buttons to any assignment in RetroArch but it is best to pick a consistent pattern across all controllers to avoid confusion.  <br/>
- 
-**Extra expenses:**  
-Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
-or female Dupont pre-wired bundles with spare wire 24-28AWG (stranded wire for flexiblity)  
-Sanwa - 2.8mm(0.110") or Suzo-Happ - 4.8mm(0.187") female spade crimp connectors for arcade button ends 
-<br/><br/>
+   
 **The Code:**<br/>
 There are two versions of code: Pick your code to use
 - Standard Mouse and Joystick buttons version  
   - Trackball_8-Button.ino
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
   - Trackball_8-Button-mod.ino  
-  
+
+**Extra expenses:**  
+Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
+or female Dupont pre-wired bundles with spare wire 24-28AWG (stranded wire for flexiblity)  
+Sanwa - 2.8mm(0.110") or Suzo-Happ - 4.8mm(0.187") female spade crimp connectors for arcade button ends 
+<br/><br/>
+
 **For the more observant** in pictures 
 "[Inside Spaghetti](Special%20Testing%20Pics/Inside%20spaghetti.jpg)" and 
 "[Arduino Beauty Shot](Special%20Testing%20Pics/Arduino%20beauty%20shot.jpg)" 
