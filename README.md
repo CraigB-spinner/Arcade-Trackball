@@ -54,7 +54,7 @@ or female Dupont pre-wired bundles with spare wire 24-28AWG (stranded wire for f
 Sanwa - 2.8mm(0.110") or Suzo-Happ - 4.8mm(0.187") female spade crimp connectors for arcade button ends 
 <br/><br/>
 **The Code:**<br/>
-There are three versions of code: Pick your code to use
+There are two versions of code: Pick your code to use
 - Standard Mouse and Joystick buttons version  
   - Trackball_8-Button.ino
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
