@@ -1,9 +1,9 @@
 /*   Arcade Trackball/Spinner v2.02
 *    (new trackball/mouse dual x and y axis - added pinC & pinD - RX1/PD2, TX0/PD3 data pins)
 *    Mouse and Joystick (Arcade Trackball) version with Joystick override using buttons for menu navigation.
+*
 *    Craig B  - (craigbspinner@gmail.com)
 *    Copyright 2020 Craig B - based on Spinner code from early June 2019 
-
 *                   Craig B - Updated 70% of code, 
 *                             Added spinner movement ACCM/DROP, 
 *                             Optimized code speed by changing if logic to case statement logic for Button validation of port bits.
