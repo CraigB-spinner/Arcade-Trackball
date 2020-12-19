@@ -1,4 +1,4 @@
-## *Arcade-Trackball*
+## **Arcade-Trackball** 
 Arcade Trackball - based off Spinner version 2
 
 ![Trackball](Pics/IMG_3843.jpg)  
