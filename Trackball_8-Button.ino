@@ -1,5 +1,6 @@
 /*   Arcade Trackball/Spinner v2.02
 *    (new trackball/mouse dual x and y axis - added pinC & pinD - RX1/PD2, TX0/PD3 data pins)
+*    Craig B  - (craigbspinner@gmail.com)
 *    Copyright 2020 Craig B - based on Spinner code from early June 2019 
 *                   Craig B - Updated 70% of code, 
 *                             Added spinner movement ACCM/DROP, 
