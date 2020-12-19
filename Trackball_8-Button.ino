@@ -101,7 +101,9 @@ volatile int rotPositionY = 0;
 volatile int rotMultiY = 0;
 
 // Last state of 10 the buttons (update array for your maxBut buttons)
-// Since Button Port Bits are set to 1 to activate(pull-hi input resistors), the press state is low, and not pressed is high.
+// Since Button Port Bits are set to 1 to activate (pull-up resistors for input), 
+// the press state is low, and not pressed is high.
+// axisEnable 6
 #ifdef axisEnable
   int lastButtonState[maxBut] = {1,1,1,1,1,1,1,0,1,1};
 #else
@@ -409,5 +411,4 @@ void loop(){
 
     ++button;
   } while (button < maxBut);
-
 }
