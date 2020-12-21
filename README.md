@@ -11,8 +11,8 @@ Dec 16/20: Uploaded new code for override Joystick directions mod (using buttons
 This project uses an Arduino Pro Micro clone, arcade trackball, with 8 buttons (up to 10) for use with MAME or any other emulator which can use x-axis and y-axis of mouse device as a trackball controller. Code should work on any board using an ATmega32U4 as long as the port pins are mapped to the same "digital pins" as the [Pro Micro](Pics/Arduino%20Pro%20Micro%20Atmega32u4.jpg).  
 To construct, you will need an older non-PS/2 style trackball which can operate at 5v along with some momentary switches plus Arduino micro controller. 
 This [trackball](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), RA-TRACKBALL-2, uses the [red Opto boards](Pics/Red_Board_Pinout.jpg), A052-1011-00, and not the green PS/2 Opto board pair.<br/> 
-[**TrackBall** used](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)<br/>
-[**ATmega32U4** used](https://www.amazon.ca/gp/product/B01N4TVIQX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)<br/>
+[**TrackBall** used](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) (clone of SuzoHapp style trackball by RetroArcade.us)<br/>
+[**ATmega32U4** used](https://www.amazon.ca/gp/product/B01N4TVIQX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) (clone of SparkFun Pro Micro)<br/>
 <br/>
 
 You will also need the Arduino joystick library available at: https://github.com/MHeironimus/ArduinoJoystickLibrary<br/><br/>
