@@ -79,4 +79,4 @@ The top, I used tinted Polycarbonate sheet (0.120" thick) found at a local surpl
 **The Box:**  
 The wood box measures 17" x 9" x 3⅞" in size, with a 19" x 11" Lexan top - [Trackball box](Pics/TrackBox%20Layout%20dimensions.png) dimensions;  
 the wood sides have 7/16" rabbet butt joints glued and 7/16" rabbet joint along inside bottom edge to allow plywood panel to recess in flush.  
-The bottom edge have been ¼ round with router. Physical dimensions of [Trackball](Pics/RA-Trackball-2%20dimensions.jpg) shimmed by four wooden blocks on right side, bottom side, and two on bottom. Block dimensions will vary with your own inside/outside box dimensions; leave space under ball to allow lighting and "Dust Bunny" particles to fall through. 
+The bottom edge has been ¼ round with router. Physical dimensions of [Trackball](Pics/RA-Trackball-2%20dimensions.jpg) shimmed by four wooden blocks on right side, bottom side, and two on bottom. Block dimensions will vary with your own inside/outside box dimensions; leave space under ball to allow lighting and "Dust Bunny" particles to fall through. 
