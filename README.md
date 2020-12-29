@@ -74,4 +74,9 @@ The assembled pictures before adding clear finish to antique oak wood box
 "[ATmega32U4 wired inside](Finished%20pictures/ATmega32U4%20wired%20inside.jpg)", 
 "[Buttons](Finished%20pictures/Buttons.jpg)", 
 "[Trackball](Finished%20pictures/Trackball.jpg)".
-The top, I used tinted Polycarbonate sheet (0.120" thick) found at a local surplus store and bottom from wood sitting in my parents basement from early 60's sourced from Stelco for handling steel. I later found out the wood was very dense, hard oak 100 to 120 years old from sapling. I snapped a few #4 screws while assembling which staled progress. Bottom panel is 1/4" - 3/16" plywood insert. 
+The top, I used tinted Polycarbonate sheet (0.120" thick) found at a local surplus store and bottom from wood sitting in my parents basement from early 60's sourced from Stelco for handling steel. I later found out the wood was very dense, hard oak 100 to 120 years old from sapling. I snapped a few #4 screws while assembling which staled progress. Bottom panel is 1/4" - 3/16" plywood insert.  
+
+**The Box:**  
+The wood box measures 17" x 9" x 3⅞" in size, with a 19" x 11" Lexan top - [Trackball box](Pics/TrackBox%20Layout%20dimensions.png) dimensions;  
+the wood sides have 7/16" rabbet butt joints glued and 7/16" rabbet joint along inside bottom edge to allow plywood panel to recess in flush.  
+The bottom edge have been ¼ round with router. Physical dimensions of [Trackball](Pics/RA-Trackball-2%20dimensions.jpg) shimmed by four wooden blocks on right side, bottom side, and two on bottom. Block dimensions will vary with your own inside/outside box dimensions; leave space under ball to allow lighting and "Dust Bunny" particles to fall through. 
