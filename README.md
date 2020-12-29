@@ -51,9 +51,9 @@ You can assign buttons to any assignment in RetroArch but it is best to pick a c
 **The Code:**<br/>
 There are two versions of code: Pick your code to use
 - Standard Mouse and Joystick buttons version  
-  - Trackball_8-Button.ino
+  - [Trackball_8-Button.ino](Trackball_8-Button.ino)
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
-  - Trackball_8-Button-mod.ino  
+  - [Trackball_8-Button-mod.ino](Trackball_8-Button-mod.ino)  
 
 **Extra expenses:**  
 Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
