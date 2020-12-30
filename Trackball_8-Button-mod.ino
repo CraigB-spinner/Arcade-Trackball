@@ -425,28 +425,28 @@ void loop(){
         if (currentButtonState != lastButtonState[button]) {
           switch ( button ) {
             case 2: // LEFT
-              if (currentButtonState == 1) {
+              if (currentButtonState == butOff) {
                 Joystick.setXAxis(511);
               } else {
                 Joystick.setXAxis(0);
               }
               break;
             case 3: // UP
-              if (currentButtonState == 1) {
+              if (currentButtonState == butOff) {
                 Joystick.setYAxis(511);
               } else {
                 Joystick.setYAxis(0);
               }
               break;
             case 4: // RIGHT
-              if (currentButtonState == 1) {
+              if (currentButtonState == butOff) {
                 Joystick.setXAxis(511);
               } else {
                 Joystick.setXAxis(1023);
               }
               break;
             case 5: // DOWN
-              if (currentButtonState == 1) {
+              if (currentButtonState == butOff) {
                 Joystick.setYAxis(511);
               } else {
                 Joystick.setYAxis(1023);
@@ -471,14 +471,14 @@ void loop(){
 //
 //      switch ( button ) {
 //        case 4: // LEFT
-//          if (currentButtonState == 1) {
+//          if (currentButtonState == butOff) {
 //            Mouse.release(MOUSE_LEFT);
 //          } else {
 //            Mouse.press(MOUSE_LEFT);
 //          }
 //          break;
 //        case 5: // RIGHT
-//          if (currentButtonState == 1) {
+//          if (currentButtonState == butOff) {
 //            Mouse.release(MOUSE_RIGHT);
 //          } else {
 //            Mouse.press(MOUSE_RIGHT);
