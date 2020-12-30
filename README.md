@@ -85,9 +85,10 @@ The assembled pictures before adding clear finish to antique oak wood box
 "[ATmega32U4 wired inside](Finished%20pictures/ATmega32U4%20wired%20inside.jpg)", 
 "[Buttons](Finished%20pictures/Buttons.jpg)", 
 "[Trackball](Finished%20pictures/Trackball.jpg)".
-The top, I used tinted Polycarbonate sheet (0.120" thick) found at a local surplus store and bottom from wood sitting in my parents basement from early 60's sourced from Stelco for handling steel. I later found out the wood was very dense, hard oak 100 to 120 years old from sapling. I snapped a few #4 screws while assembling which staled progress. Bottom panel is <sup>3</sup>/<sub>16</sub>" - <sup>1</sup>/<sub>4</sub>" plywood insert - 15⅞" x 7⅞".  
+The top, I used tinted Polycarbonate sheet (0.120" thick) found at a local surplus store and bottom from wood sitting in my parents basement from early 60's sourced from Stelco for handling steel. I later found out the wood was very dense, hard oak 100 to 120 years old from sapling. I snapped a few #4 screws while assembling which staled progress. Bottom panel is <sup>3</sup>/<sub>16</sub>" - <sup>1</sup>/<sub>4</sub>" plywood insert.  
 
 **The Box:**  
 The wood box measures 17" x 9" x 3⅞" in size, with a 19" x 11" Lexan top - [Trackball box](Pics/TrackBox%20Layout%20dimensions.png) dimensions;  
-wood sides have <sup>7</sup>/<sub>16</sub>" rabbet butt joints glued, and <sup>7</sup>/<sub>16</sub>" rabbet along inside bottom edge to allow plywood panel to recess in flush.  
-The outside bottom edge has a ¼ round routered edge. Physical dimensions of [Trackball](Pics/RA-Trackball-2%20dimensions.jpg) are shimmed by four wooden blocks on right side, bottom side, and two on the bottom. Block dimensions will vary with your own inside/outside box dimensions; leave space under ball to allow lighting and "Dust Bunny" particles to fall through. 
+wood sides have <sup>7</sup>/<sub>16</sub>" rabbet butt joints glued, and <sup>7</sup>/<sub>16</sub>" rabbet along inside bottom edge to allow 15⅞" x 7⅞" plywood panel to recess in flush. The outside bottom edge has a ¼ round routered edge.  
+Physical dimensions of [Trackball](Pics/RA-Trackball-2%20dimensions.jpg) are shimmed by four wooden blocks on right side, bottom side, and two on the bottom.  
+Block dimensions will vary with your own inside/outside box dimensions; leave space under ball to allow lighting and "Dust Bunny" particles to fall through. 
