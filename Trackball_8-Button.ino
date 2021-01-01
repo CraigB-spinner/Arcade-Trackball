@@ -75,10 +75,11 @@
 
 #define pinA 2    //The pins that the trackball/mouse x-axis encoder's A and B terminals are connected to.
 #define pinB 3
-#define maxBut 10
-//#define axisEnable 6  //Special x-axis disable button (button offset: 0 thru 9) - comment out if 'x-axis disable' feature not required by you.
 #define pinC 0    //The pins that the trackball/mouse y-axis encoder's C and D terminals are connected to.
 #define pinD 1
+
+#define maxBut 10       //Update lastButtonState array below when changing number of elements.
+//#define axisEnable 6  //Special x-axis disable button (button offset: 0 thru 9) - comment out if 'x-axis disable' feature not required by you.
 
 //Create a Joystick object.
 Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD,
@@ -105,7 +106,7 @@ volatile int rotMultiY = 0;
 // Last state of 10 the buttons (update array for your maxBut buttons)
 // Since Button Port Bits are set to 1 to activate (pull-up resistors for input), 
 // the press state is low, and not pressed is high.
-// axisEnable 6
+// axisEnable 6 (button offset: 0 thru 9)
 #ifdef axisEnable
   int lastButtonState[maxBut] = {1,1,1,1,1,1,1,0,1,1};
 #else
