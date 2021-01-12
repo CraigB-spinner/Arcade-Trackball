@@ -64,8 +64,7 @@ There are two versions of code: Pick your code to use
 - Standard Mouse and Joystick buttons version  
   - [Trackball_8-Button.ino](Trackball_8-Button.ino)
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
-  - [Trackball_8-Button-mod.ino](Trackball_8-Button-mod.ino) <sub> 1.</sub><br/>
-  
+  - [Trackball_8-Button-mod.ino](Trackball_8-Button-mod.ino) <sub> 1.</sub>  
 <sub>1. Used two TTP223 Capacitive Touch switches to control special functions: the 
 "[Touch Switches](Pics/Double%20Touch.jpg)" and 
 "[Touch in Box](Pics/Special%20Touch%20Buttons.jpg)"  
