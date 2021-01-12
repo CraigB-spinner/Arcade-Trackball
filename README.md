@@ -65,9 +65,10 @@ There are two versions of code: Pick your code to use
   - [Trackball_8-Button.ino](Trackball_8-Button.ino)
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
   - [Trackball_8-Button-mod.ino](Trackball_8-Button-mod.ino)  
-Here I used two TTP223 Capacitive Touch Switches to control special functions: 
-"[Double Touch Switches](Pics/Double%20Touch.jpg)" and 
-"[Touch in Box](Pics/Special%20Touch%20Buttons.jpg)" 
+Here, I used two TTP223 Capacitive Touch switches to control special functions:  
+the "[Touch Switches](Pics/Double%20Touch.jpg)" and 
+"[Touch in Box](Pics/Special%20Touch%20Buttons.jpg)"  
+Invert the Touch I/O state by shorting contact A to Vcc, and/or contact B to activate on/off toggle mode.
 
 **Extra expenses:**  
 Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
