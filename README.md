@@ -7,7 +7,10 @@ At sub $10 USD, it is a substitute to Ultimarc's U-HID Nano @ $35 + shipping - Y
 New additional interrupts, movement y-axis processing and both x/y axes handling.<br/>
 Oct 12/20: Code now availble, see extra pictures of finished Trackball box.  
 Dec 16/20: Added code for x-axis disable (Golf game driver - no hook/slice cheat)  
-Dec 16/20: Uploaded new code for override Joystick directions mod (using buttons for menu)<br/><br/>
+Dec 16/20: Uploaded new code for override Joystick directions mod (using buttons for menu)  
+Jan 15/21: Uploaded new code for Trackball six colour rotation using a RGB 5050 LED Strip  
+(Use of programmer is required to unprogram fuse bit, JTAGEN = 1)
+<br/><br/>
 This project uses an Arduino Pro Micro clone, arcade trackball, with 8 buttons (up to 10) for use with MAME or any other emulator which can use x-axis and y-axis of mouse device as a trackball controller. Code should work on any board using an ATmega32U4 as long as the port pins are mapped to the same "digital pins" as the [Pro Micro](Pics/Arduino%20Pro%20Micro%20Atmega32u4.jpg).  
 To construct, you will need an older non-PS/2 style trackball which can operate at 5v along with some momentary switches plus Arduino micro controller. 
 This [trackball](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), RA-TRACKBALL-2, uses the [red Opto boards](Pics/Red_Board_Pinout.jpg), A052-1011-00, and not the green PS/2 Opto board pair. It is unknown if the Jamma 60-in-1 (6-pin header) style trackballs use quadrature rotary encoder pulses for x/y axes like for Game Elf Jamma 138/276/352/485/619/1162-in-1, etc. (10-pin header/dual player) boards or board pair output PS/2 (DIR/CLK) protocol. AliExpress does show a Jamma 60-in-1 board with trackball using 6-pin header & 10-pin header harness, but would require closer look at encoder boards.<br/> 
@@ -65,11 +68,16 @@ There are two versions of code: Pick your code to use
   - [Trackball_8-Button.ino](Trackball_8-Button.ino)
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
   - [Trackball_8-Button-mod.ino](Trackball_8-Button-mod.ino) <sub> 1.</sub><br/>
-  
+- Standard Mouse and Joystick buttons version - mod RGB Trackball and Joystick directions (use buttons for menu)
+  - [Trackball_8-Button-mod-rgb.ino]() <sub> 1. 2.</sub> Available at later date... once parts arrive & tested.<br/>
+
 <sub>1. Used two TTP223 Capacitive Touch switches to control special functions: the 
 "[Touch Switches](Pics/Double%20Touch.jpg)" and 
 "[Touch in Box](Pics/Special%20Touch%20Buttons.jpg)"  
-Note: Invert the Touch I/O state by shorting contact A to Vcc, and/or contact B to activate on/off toggle mode.</sub>
+Note: Invert the Touch I/O state by shorting contact A to Vcc, and/or contact B to activate on/off toggle mode.</sub>  
+<sub>2. Trackball colour rotation using a RGB 5050 LED Strip and  
+PORTF bits 4-6 set to output (requires fuse bit JTAGEN=1 be disabled) to control the colour.  
+Use caution when reprograming Fuse bits & Bootloader as incorrect settings may brick microcontroller. Proceed at own risk.</sub>
 
 **Extra expenses:**  
 Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
