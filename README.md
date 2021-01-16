@@ -74,7 +74,7 @@ There are two versions of code: Pick your code to use
 <sub>1. Used two TTP223 Capacitive Touch switches to control special functions: the 
 "[Touch Switches](Pics/Double%20Touch.jpg)" and 
 "[Touch in Box](Pics/Special%20Touch%20Buttons.jpg)"  
-Note: Invert the Touch I/O state by shorting contact A to Vcc, and/or contact B to activate on/off toggle mode.</sub>  
+Note: Invert the Touch I/O state by shorting [contact A to Vcc](Pics/TTP223B_chip_side.jpg), and/or contact B to activate on/off toggle mode.</sub>  
 <sub>2. Trackball colour rotation using a RGB 5050 LED Strip and  
 PORTF bits 4-6 set to output (requires fuse bit JTAGEN=1 be disabled) to control the colour.  
 Use caution when reprograming Fuse bits & Bootloader as incorrect settings may brick microcontroller. Proceed at own risk.</sub>
