@@ -79,7 +79,7 @@ Note: Invert the Touch I/O state by shorting [contact A to Vcc](Pics/TTP223B_chi
 PORTF bits 4-6 set to output (requires fuse bit JTAGEN=1 be disabled) to control the colour.  
 Use caution when reprograming Fuse bits & Bootloader as incorrect settings may brick microcontroller. Proceed at own risk.  
 Extra circuitry likely required to handle RGB LED current as microcontroller has 40mA current limits without damage to output Port.  
-[Inverting MOSFET circuit](Pics/1.jpg) 
+[Inverting MOSFET circuit](Pics/MOSFET-3-LED-Strip(red).jpg) 
 Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-switches-experiments.html)</sub>
 
 **Extra expenses:**  
