@@ -77,9 +77,11 @@ There are two versions of code: Pick your code to use
 Note: Invert the Touch I/O state by shorting [contact A to Vcc](Pics/TTP223B_chip_side.jpg), and/or contact B to activate on/off toggle mode.</sub>  
 <sub>2. Trackball colour rotation using a [RGB 5050 LED Strip](Pics/RGB5050_board.jpg) and  
 PORTF bits 4-6 set to output (requires fuse bit JTAGEN=1 be disabled) to control each colour LED (Red, Green Blue).  
-Use caution when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader as incorrect settings may brick microcontroller. Proceed at own risk.  
-Extra circuitry likely required to handle RGB LED current as microcontroller has 40mA current limits without damage to output Port.  
-[Inverting MOSFET circuit](Pics/MOSFET-3-LED-Strip(red).jpg) & [USBtinyISP Programmer & DIY Harness](Pics/USBtinyISP-Programmer+DIY-Harness.jpg)
+Use caution when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader as incorrect settings may brick your microcontroller.  
+**Proceed at own risk.**  
+Extra circuitry likely required to handle RGB LED current, microcontroller has 40mA current limits per bit without damaging Port output.  
+[Inverting MOSFET circuit](Pics/MOSFET-3-LED-Strip(red).jpg) & 
+[USBtinyISP Programmer & DIY Harness](Pics/USBtinyISP-Programmer+DIY-Harness.jpg) 
 Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-switches-experiments.html)</sub>
 
 **Extra expenses:**  
