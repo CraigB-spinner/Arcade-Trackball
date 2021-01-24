@@ -139,7 +139,7 @@ int lastButtonState[maxBut] = {1,1,1,1,1,1,0,0,1,1};
 //Using a RGB 5050 LED Strip and 
 //PortF set to output bits 4-6 (requires fuse bit JTAGEN=1 be disabled) to control the colour
 //All Ports have 40mA limits (DO NOT EXCEED without risk of burning out port bit) 
-//otherwise use BC170 MOSFETs to handle upto 500mA (remember USB 2.0 current limits)
+//otherwise use BS170 MOSFETs to handle upto 500mA (remember USB 2.0 current limits)
 #ifdef rgbTrack
 #define xRGBNeg            //RGB Led - Negative(common anode) or comment out for Positive(common cathode)
 #define xRGB    0b01110000 //PortF registers
