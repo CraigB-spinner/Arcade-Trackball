@@ -81,8 +81,8 @@
 #define pinD 1
 
 #define maxBut 10       //Update lastButtonState array below when changing number of elements.
-//#define axisEnable 6  //Special x-axis disable button (button offset: 0 thru 9) - comment out if 'x-axis disable' feature not required by you.
-//#define joyStmp    7  //button for temp JoyStick override (button offset: 0 thru 9) - comment out if 'JoyStick override' feature not required by you.
+#define axisEnable 6  //Special x-axis disable button (button offset: 0 thru 9) - comment out if 'x-axis disable' feature not required by you.
+#define joyStmp    7  //button for temp JoyStick override (button offset: 0 thru 9) - comment out if 'JoyStick override' feature not required by you.
 
 #ifdef joyStmp
 #define butPrs 0      //Button pulled low when pressed
@@ -450,9 +450,9 @@ void loop(){
               else 
                 Joystick.setYAxis(1023);
               break;
-//            default: //Extra digital pins
-//              break;          
-          }
+            default: //Extra digital pins
+                Joystick.setButton(button, !currentButtonState);
+              break;                    }
         } 
       } else //joyStOn is off
       if (button == joyStmp ) {  //temp Joystick override disabled - center Joystick
