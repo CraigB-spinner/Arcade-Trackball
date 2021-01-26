@@ -9,7 +9,8 @@ Oct 12/20: Code now availble, see extra pictures of finished Trackball box.
 Dec 16/20: Added code for x-axis disable (Golf game driver - no hook/slice cheat)  
 Dec 16/20: Uploaded new code for override Joystick directions mod (using buttons for menu)  
 Jan 15/21: Uploaded new code for Trackball six colour rotation using a RGB 5050 LED Strip  
-(Use of programmer is required to unprogram fuse bit, JTAGEN = 1)
+(Use of programmer is required to unprogram fuse bit, JTAGEN = 1)  
+Jan 26/21: Uploaded new code for Mouse only Trackball operation. Note: all buttons can be inactivated for Trackball-Only operation.
 <br/><br/>
 This project uses an Arduino Pro Micro clone, arcade trackball, with 8 buttons (up to 10) for use with MAME or any other emulator which can use x-axis and y-axis of mouse device as a trackball controller. Code should work on any board using an ATmega32U4 as long as the port pins are mapped to the same "digital pins" as the [Pro Micro](Pics/Arduino%20Pro%20Micro%20Atmega32u4.jpg).  
 To construct, you will need an older non-PS/2 style trackball which can operate at 5v along with some momentary switches plus Arduino micro controller. 
@@ -66,6 +67,8 @@ You can assign buttons to any assignment in RetroArch but it is best to pick a c
 There are three versions of code: Pick your code to use
 - Standard Mouse and Joystick buttons version  
   - [Trackball_8-Button.ino](Trackball_8-Button.ino)
+- Special Mouse only version with & without Mouse buttons - no Joystick buttons
+  - [Trackball_L-C-R-Button_Special.ino](Trackball_L-C-R-Button_Special.ino)
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
   - [Trackball_8-Button-mod.ino](Trackball_8-Button-mod.ino) <sub> 1.</sub><br/>
 - Standard Mouse and Joystick buttons version - mod RGB Trackball and Joystick directions
