@@ -63,7 +63,7 @@ I believe the trackball encoder A/B output is reversed as you move the ball and 
 You can assign buttons to any assignment in RetroArch but it is best to pick a consistent pattern across all controllers to avoid confusion.  <br/>
    
 **The Code:**<br/>
-There are two versions of code: Pick your code to use
+There are three versions of code: Pick your code to use
 - Standard Mouse and Joystick buttons version  
   - [Trackball_8-Button.ino](Trackball_8-Button.ino)
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
