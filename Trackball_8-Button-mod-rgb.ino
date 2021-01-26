@@ -521,8 +521,9 @@ void loop(){
               else 
                 Joystick.setYAxis(1023);
               break;
-//            default: //Extra digital pins
-//              break;          
+            default: //Extra digital pins
+                Joystick.setButton(button, !currentButtonState);
+              break;          
           }
         } 
       } else //joyStOn is off
