@@ -100,9 +100,9 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD,
   false, false, false);  // No accelerator, brake, or steering;
 
 //The previous state of the AB pins
-volatile int previousReadingX = 0;
+volatile int prevQuadratureX = 0;
 //The previous state of the CD pins
-volatile int previousReadingY = 0;
+volatile int prevQuadratureY = 0;
 
 //Keeps track of how much the encoder has been moved
 volatile int rotPositionX = 0;
@@ -182,47 +182,40 @@ void setup() {
 //Interrupt handler x-axis
 void pinChangeX() {
 
-  //Set the currentReading variable to the current state of encoder terminals A and B which are conveniently located in bits 0 and 1 (digital pins 2 and 3) of PortB
-  //This will give us a nice binary number, eg. 0b00000011, representing the current state of the two terminals.
-  //You could do int currentReadingX = (digitalRead(pinA) << 1) | digitalRead(pinB); to get the same thing, but it would be much slower.
+  //Set currQuadratureX to state of rotary encoder terminals A & B from input of PORTD bits 0 & 1 (digital pins 2 and 3)
+  //You could do int currQuadratureX = (digitalRead(pinA) << 1) | digitalRead(pinB); to get the same thing, but it would be much slower.
   //Read current state 00AB.
-  int currentReadingX = PIND & 0b00000011;
+  int currQuadratureX = PIND & 0b00000011;
 
-  //Take the nice binary number we got last time there was an interrupt and shift it to the left by 2 then OR it with the current reading.
-  //This will give us a nice binary number, eg. 0b00001100, representing the former and current state of the two encoder terminals.
-  //Shift left 2 bits: 00AB -> AB00 to store current state as prior state.
-  int combinedReadingX  = (previousReadingX << 2) | currentReadingX; 
-
-  //Now that we know the previous and current state of the two terminals we can determine which direction the rotary encoder is turning.
+  //Store comboQuadratureX with previous and current quadrature rotary encoder states together. 
+  //Combined previous/current states form two groups of four unique bit patterns indicating direction of movement.
+  //Shift left 2 bits: 00AB <- AB00 to store current state as previous state.
+  int comboQuadratureX  = (prevQuadratureX << 2) | currQuadratureX; 
 
   //Rotate to the right, Clockwise
-  //State 00AB, A leads B. A0 -> AB -> 0B -> 00 
-  if(combinedReadingX == 0b0010 || 
-     combinedReadingX == 0b1011 ||
-     combinedReadingX == 0b1101 || 
-     combinedReadingX == 0b0100) {
-#ifdef axisEnable
+  //State 00AB, A leads B. A0 -> AB -> 0B -> 00 0b0010 0b1011 0b1101 0b0100
+  if(comboQuadratureX == 0b0010 || comboQuadratureX == 0b1011 ||
+     comboQuadratureX == 0b1101 || comboQuadratureX == 0b0100) {
+  #ifdef axisEnable
      rotPositionX += (xAxis);          //update the position of the encoder
-#else
+  #else
      rotPositionX++;                   //update the position of the encoder
-#endif
+  #endif
   }
 
   //Rotate to the left, Counter Clockwise
-  //State 00AB, B leads A. 0B -> AB -> A0 -> 00
-  if(combinedReadingX == 0b0001 ||
-     combinedReadingX == 0b0111 ||
-     combinedReadingX == 0b1110 ||
-     combinedReadingX == 0b1000) {
-#ifdef axisEnable
+  //State 00AB, B leads A. 0B -> AB -> A0 -> 00 0b0001 0b0111 0b1110 0b1000
+  if(comboQuadratureX == 0b0001 || comboQuadratureX == 0b0111 ||
+     comboQuadratureX == 0b1110 || comboQuadratureX == 0b1000) {
+  #ifdef axisEnable
      rotPositionX -= (xAxis);          //update the position of the encoder
-#else
+  #else
      rotPositionX--;                   //update the position of the encoder
-#endif
+  #endif
   }
 
   //Save the previous state of the A and B terminals for next time
-  previousReadingX = currentReadingX;
+  prevQuadratureX = currQuadratureX;
 }
 
 
@@ -230,41 +223,32 @@ void pinChangeX() {
 //Interrupt handler y-axis
 void pinChangeY() {
 
-  //Set the currentReading variable to the current state of encoder terminals A and B which are conveniently located in bits 2 and 3 (digital pins 0 and 1) of PortD
-  //This will give us a nice binary number, eg. 0b00000011, representing the current state of the two terminals.
-  //You could do int currentReadingY = (digitalRead(pinC) << 1) | digitalRead(pinD); to get the same thing, but it would be much slower.
+  //Set currQuadratureY to state of rotary encoder terminals A & B from input of PORTD bits 2 & 3 (digital pins 0 and 1) 
+  //You could do int currQuadratureY = (digitalRead(pinC) << 1) | digitalRead(pinD); to get the same thing, but it would be much slower.
   //Read current state CD00.
-  int currentReadingY = PIND & 0b00001100;
+  int currQuadratureY = PIND & 0b00001100;
 
-  //Take the nice binary number we got last time there was an interrupt and shift it to the left by 2 then OR it with the current reading.
-  //This will give us a nice binary number, eg. 0b00001100, representing the former and current state of the two encoder terminals.
-  //Shift right 2 bits: CD00 -> 00CD to store current state as prior state.
-  int combinedReadingY  = (previousReadingY >> 2) | currentReadingY; 
-
-  //Now that we know the previous and current state of the two terminals we can determine which direction the rotary encoder is turning.
+  //Store comboQuadratureY with current and previous quadrature rotary encoder states together. 
+  //Combined current/previous states form two groups of four unique bit patterns indicating direction of movement.
+  //Shift right 2 bits: CD00 -> 00CD to store current state as previous state.
+  int comboQuadratureY  = (prevQuadratureY >> 2) | currQuadratureY; 
 
   //Rotate to the right, Clockwise
-  //State 00AB, A leads B. A0 -> AB -> 0B -> 00 0b0010 0b1011 0b1101 0b0100
   //State CD00, C leads D. C0 -> CD -> 0D -> 00 0b1000 0b1110 0b0111 0b0001
-  if(combinedReadingY == 0b1000 || 
-     combinedReadingY == 0b1110 || 
-     combinedReadingY == 0b0111 || 
-     combinedReadingY == 0b0001) { 
+  if(comboQuadratureY == 0b1000 || comboQuadratureY == 0b1110 || 
+     comboQuadratureY == 0b0111 || comboQuadratureY == 0b0001) { 
      rotPositionY++;                   //update the position of the encoder
   }
 
   //Rotate to the left, Counter Clockwise
-  //State 00AB, B leads A. 0B -> AB -> A0 -> 00 0b0001 0b0111 0b1110 0b1000
   //State CD00, D leads C. 0D -> CD -> C0 -> 00 0b0100 0b1101 0b1011 0b0010
-  if(combinedReadingY == 0b0100 ||
-     combinedReadingY == 0b1101 ||
-     combinedReadingY == 0b1011 ||
-     combinedReadingY == 0b0010) {
+  if(comboQuadratureY == 0b0100 || comboQuadratureY == 0b1101 ||
+     comboQuadratureY == 0b1011 || comboQuadratureY == 0b0010) {
      rotPositionY--;                   //update the position of the encoder
   }
 
   //Save the previous state of the C and D terminals for next time
-  previousReadingY = currentReadingY;
+  prevQuadratureY = currQuadratureY;
 }
 
 
