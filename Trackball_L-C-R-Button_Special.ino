@@ -30,7 +30,6 @@
 */
 
 #include "Mouse.h"
-#include <Joystick.h>
 
 /*   RetroPie mods - Arduino IDE -> Tools, Get Board Info
 *    VID: 1B4F
