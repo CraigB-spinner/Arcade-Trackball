@@ -211,8 +211,6 @@ void pinChangeY() {
   //Shift right 2 bits: CD00 -> 00CD to store current state as previous state.
   int comboQuadratureY  = (prevQuadratureY >> 2) | currQuadratureY; 
 
-  //Now that we know the previous and current state of the two terminals we can determine which direction the rotary encoder is turning.
-
   //Rotate to the right, Clockwise
   //State CD00, C leads D. C0 -> CD -> 0D -> 00 0b1000 0b1110 0b0111 0b0001
   if(comboQuadratureY == 0b1000 || comboQuadratureY == 0b1110 || 
