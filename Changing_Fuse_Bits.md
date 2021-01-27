@@ -17,6 +17,16 @@ ICSP 6-Pin Cable coverting to Arduino Pro Micro headers.
 24  |Raw  |empty  | - - -
 
 
+
+**On your computer,**  
+ATmel manual for ATMega32U4 pages: 346 - 348  
+[High/Low bits](ICSP_Pics/ATMega32U4%20-%20Fuse%20bits%20-%20High%20%26%20Low.jpg), 
+[Extended bits](ICSP_Pics/ATMega32U4%20-%20Fuse%20bits%20-%20Extended.jpg), 
+[Lock bits](ICSP_Pics/ATMega32U4%20-%20Lock%20bits.jpg)  
+
+
+
+
 **On your computer,**  
 use program Putty and SSH to your PI's ip address.  
 `login: pi`  
@@ -31,9 +41,4 @@ on the same line separated from other stuff by spaces
 This parameter enforces a mouse polling rate of 62.5Hz and reduces any quick movement lag.  
 
 `sudo reboot`
-
-ATmel manual for ATMega32U4 pages: 346 -348
-[High/Low bits](Programmer.jpg)
-[Extended bits](Programmer.jpg)
-[Lock bits](Programmer.jpg)
 
