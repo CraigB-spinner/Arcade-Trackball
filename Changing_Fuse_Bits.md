@@ -54,6 +54,10 @@ If everything is Okay, Start **[AVRDUDESS](ICSP_Pics/AVRDUDESS.jpg)**,
 configure: Programmer & Port  
 click on `Detect` - Your MCU signature should display.  
 Update bits.xml with your MCU signature.   
+Should look like [AVRDUDESS - Configure 'bits.xml'](ICSP_Pics/AVRDUDESS%20bits.xml%20file%20update%20for%20Fuse%20%26%20Lock%20Bits.jpg)  
+Update bits.xml with any differences or missing Bit names under high, low, ext, lock tags. (8 Bit names per Byte).  
+Save your updated bits.xml file.  
+
 
 
 
