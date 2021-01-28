@@ -27,7 +27,7 @@ Download and install Notepad++ to edit XML file *'C:\Program Files (x86)\AVRDUDE
 If you use Arduino IDE, I believe that includes a copy of AVRDUDE within the install package. 
 
 Before starting **AVRDUDESS**,  
-you will need to add XML 'mcu' tag group including attributes for your ATMega32U4 MCU.  
+you will need to add XML *'mcu'* tag group including attributes for your ATMega32U4 MCU.  
 Attributes for High/Low/Extended & Lock bits can be found in the three manual pages listed below  
 
 ATmel manual for ATMega32U4 pages: 346 - 348  
@@ -36,10 +36,10 @@ ATmel manual for ATMega32U4 pages: 346 - 348
 [Lock bits](ICSP_Pics/ATMega32U4%20-%20Lock%20bits.jpg)  
 
 Start **Notepad++** and load XML file *'C:\Program Files (x86)\AVRDUDESS\bits.xml'*.  
-You can collaspse (Alt+2) & uncollaspse (Alt+Shift+2) extra 'mcu' tags.  
-(Keep 'atmega32' & 'atmega328p' visible.)  
-Copy and paste 'atmega328p' 'mcu' tag group (6 lines)  
-insert after 'atmega32' and change name to 'atmega32u4'.  
+You can collaspse (Alt+2) & uncollaspse (Alt+Shift+2) extra *'mcu'* tags.  
+(Keep *'atmega32'* & *'atmega328p'* visible.)  
+Copy and paste *'atmega328p'* *'mcu'* tag group (6 lines)  
+insert after *'atmega32'* and change name to *'atmega32u4'*.  
 <sub>Note: Bit No, and Bit Byte name from ATmel pages as you will need to change or add a few Bit names.</sub>  
 Your MCU 'signature' can be verified by starting **AVRDUDESS** with  
 **Programmer:** `USBtiny` ladyada version  
@@ -59,7 +59,7 @@ click on `Detect` - Your MCU/signature should respond.
 Update bits.xml with your MCU signature.   
 Update bits.xml with any differences or missing Bit names  
 under high, low, ext, lock tags. (8 Bit names per Byte, some are blank).  
-When finished should look like [AVRDUDESS - Configure 'bits.xml'](ICSP_Pics/AVRDUDESS%20bits.xml%20file%20update%20for%20Fuse%20%26%20Lock%20Bits.jpg)  
+When finished should look like [AVRDUDESS - Configure *'bits.xml'*](ICSP_Pics/AVRDUDESS%20bits.xml%20file%20update%20for%20Fuse%20%26%20Lock%20Bits.jpg)  
 Save your updated bits.xml file.  
 
 Restart AVRDUDESS  
