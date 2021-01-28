@@ -4,8 +4,9 @@
 I used an [USBtinyISP Programmer](Pics/USBtinyISP%20Programmer.jpg) with a custom wire harness to connect a Pro Micro.  
 Harness is a single 3x2 Female JST connector  
 wired into a dual 4x1 Female JST connector, or  
-ICSP 6-Pin Cable coverted to Arduino Pro Micro headers.
+ICSP (In Circuit Serial Programming) 6-Pin Cable coverted to Arduino Pro Micro headers.
 [See here](Pics/USBtinyISP-Programmer+DIY-Harness.jpg)  
+
 
 32u4<br/>Pin |Data |wire   |USBtiny<br/>Row/Col
 --- |---- |------ |--------
