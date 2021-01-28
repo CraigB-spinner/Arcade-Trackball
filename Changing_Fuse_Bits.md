@@ -8,6 +8,7 @@ ICSP (In Circuit Serial Programming) 6-Pin Cable coverted to Arduino Pro Micro h
 [See here](Pics/USBtinyISP-Programmer+DIY-Harness.jpg)  
 <sub> via SPI (Serial Peripheral Interface) pins SCLK, MOSI, MISO, <span style="text-decoration: overline">SS</span> (Pro Micro holds low)</sub>  
 ![SPI](ICSP_Pics/SPI_single_slave.png) <br/>
+
 32u4<br/>Pin |Data |wire   |USBtiny<br/>Row/Col
 --- |---- |------ |--------
 10  |D10  |empty  | - - -
