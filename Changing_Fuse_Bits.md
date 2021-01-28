@@ -69,17 +69,9 @@ click on `Bit selector` should show the breakout of your 'Fuse & Lock bits'
 [AVRDUDESS - Fuse & Lock bits](ICSP_Pics/AVRDUDESS%20Fuse%20%26%20Lock%20Bits.jpg)  
 'Fuse & Lock bits' panel should allow changes to bits and recalculate the new value.  
 Use **caution** when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader as incorrect settings may brick your microcontroller.  
-I recommend only changing **JTAGEN** bit unless you are throughly read on the operation of your micro-controller chip.  
+I recommend only changing **JTAGEN** bit unless you are thoroughly read on the operation of your micro-controller chip.  
 Fuse bits only are changed when you do a physical write by click on `Write`  
 
 **Proceed at own risk.**  
 
-
-
-[a](ICSP_Pics/USBtiny%20-%20Device%20Manager.jpg)  
-[AVRDUDESS](ICSP_Pics/AVRDUDESS.jpg)  
-[AVRDUDESS - Fuse & Lock bits](ICSP_Pics/AVRDUDESS%20Fuse%20%26%20Lock%20Bits.jpg)  
-[AVRDUDESS - Configure 'bits.xml'](ICSP_Pics/AVRDUDESS%20bits.xml%20file%20update%20for%20Fuse%20%26%20Lock%20Bits.jpg)  
-
-
-**On your computer,**  
+Good Luck - and May the Trackball twinkle in multiple colours!
