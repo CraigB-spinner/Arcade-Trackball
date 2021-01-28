@@ -23,8 +23,8 @@ ICSP 6-Pin Cable coverted to Arduino Pro Micro headers.
 **On your computer,**  
 Download and install [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) - GUI version of AVRDUDE.  
 Download and install [USBtinyISP drivers](https://learn.adafruit.com/usbtinyisp/download) - follow link to GitHub.   
-Download and install Notepad++ to edit XML file *'C:\Program Files (x86)\AVRDUDESS\bits.xml'* or any other software to edit XML files.  
-If you use Arduino IDE, I believe that includes a copy of AVRDUDE within the install package. 
+Download and install [Notepad++](https://notepad-plus-plus.org/) to edit XML file *'C:\Program Files (x86)\AVRDUDESS\bits.xml'* or any other software to edit XML files.  
+If you use [Arduino IDE](https://www.arduino.cc/en/Main/Software&), I believe that includes a copy of AVRDUDE within the install package. 
 
 Before starting **AVRDUDESS**,  
 you will need to add XML *'mcu'* tag group including attributes for your ATMega32U4 MCU.  
