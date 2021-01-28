@@ -50,7 +50,7 @@ Your computer should find your AVR programmer.
 You may need to check `Start, Control Panel, System, Device Manager` for any device driver issues.
 [USBtiny-Device Manager](ICSP_Pics/USBtiny%20-%20Device%20Manager.jpg)  
 
-If everything is Okay, Start **AVRDUDESS**,  
+If everything is Okay, Start **[AVRDUDESS](ICSP_Pics/AVRDUDESS.jpg)**,  
 configure: Programmer & Port  
 click on `Detect` - Your MCU signature should display.  
 Update bits.xml with your MCU signature.   
