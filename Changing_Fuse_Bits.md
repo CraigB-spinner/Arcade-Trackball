@@ -47,9 +47,9 @@ Connect your Pro Micro to your custom wired harness(dual connectors side).
 Confirm and connect to the ICSP header(6-pin side) on your USBtinyISP.  
 Connect the USB A/B cable.  
 Your computer should find your programmer.  
-You may need to check `Start, Control Panel, System, Device Manager` for any device driver issues.
+You may need to check `Start, Control Panel, System, [Device Manager](ICSP_Pics/USBtiny%20-%20Device%20Manager.jpg)` for any device driver issues.
 
-
+[a](ICSP_Pics/USBtiny%20-%20Device%20Manager.jpg)  
 [AVRDUDESS](ICSP_Pics/AVRDUDESS.jpg)  
 [AVRDUDESS - Fuse & Lock bits](ICSP_Pics/AVRDUDESS%20Fuse%20%26%20Lock%20Bits.jpg)  
 [AVRDUDESS - Configure 'bits.xml'](ICSP_Pics/AVRDUDESS%20bits.xml%20file%20update%20for%20Fuse%20%26%20Lock%20Bits.jpg)  
