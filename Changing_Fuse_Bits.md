@@ -55,9 +55,24 @@ configure: Programmer & Port
 click on `Detect` - Your MCU signature should display.  
 Update bits.xml with your MCU signature.   
 Should look like [AVRDUDESS - Configure 'bits.xml'](ICSP_Pics/AVRDUDESS%20bits.xml%20file%20update%20for%20Fuse%20%26%20Lock%20Bits.jpg)  
-Update bits.xml with any differences or missing Bit names under high, low, ext, lock tags. (8 Bit names per Byte).  
+Update bits.xml with any differences or missing Bit names  
+under high, low, ext, lock tags. (8 Bit names per Byte).  
 Save your updated bits.xml file.  
 
+Restart AVRDUDESS  
+configure: Programmer & Port  
+Select your MCU from drop-down list  
+click on `Read` for both 'Fuses & lock bits'  
+click on `Manage` and save a preset for you Pro Micro - also write down your defaults programmed into your micro-controller.  
+
+click on `Bit selector` should show the breakout of your 'Fuse & Lock bits'  
+[AVRDUDESS - Fuse & Lock bits](ICSP_Pics/AVRDUDESS%20Fuse%20%26%20Lock%20Bits.jpg)  
+'Fuse & Lock bits' panel should allow changes to bits and recalculate the new value.  
+Use **caution** when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader as incorrect settings may brick your microcontroller.  
+I recommend only changing **JTAGEN** bit unless you are throughly read on the operation of your micro-controller chip.  
+Fuse bits only are changed when you do a physical write by click on `Write`  
+
+**Proceed at own risk.**  
 
 
 
@@ -68,17 +83,3 @@ Save your updated bits.xml file.
 
 
 **On your computer,**  
-use program Putty and SSH to your PI's ip address.  
-`login: pi`  
-`Password: raspberry` *(unless updated by you)*  
-
-**Add:**  
-*usbhid.mousepoll=0*  
-to *cmdline.txt*
-
-`sudo nano /boot/cmdline.txt`  
-on the same line separated from other stuff by spaces  
-This parameter enforces a mouse polling rate of 62.5Hz and reduces any quick movement lag.  
-
-`sudo reboot`
-
