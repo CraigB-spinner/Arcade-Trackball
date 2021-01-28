@@ -1,5 +1,5 @@
 **Pick an AVR Programmer**  
-I used a [USBtinyISP Programmer](Pics/USBtinyISP%20Programmer.jpg) with a custom wire harness to connect a Pro Micro.  
+I used an [USBtinyISP Programmer](Pics/USBtinyISP%20Programmer.jpg) with a custom wire harness to connect a Pro Micro.  
 Harness is a single 3x2 Female JST connector  
 wired into a dual 4x1 Female JST connector, or  
 ICSP 6-Pin Cable coverted to Arduino Pro Micro headers.
@@ -24,7 +24,7 @@ Download and install [USBtinyISP drivers](https://learn.adafruit.com/usbtinyisp/
 Download and install Notepad++ to edit XML file 'C:\Program Files (x86)\AVRDUDESS\bits.xml' or any other software to edit XML files.  
 If you use Arduino IDE, I believe that includes a copy of AVRDUDE within the install package. 
 
-Before starting AVRDUDESS,  
+Before starting **AVRDUDESS**,  
 you will need to add XML 'mcu' tag group including attributes for your ATMega32U4 MCU.  
 Attributes for High/Low/Extended & Lock bits can be found in the three manual pages listed below  
 
@@ -33,8 +33,9 @@ ATmel manual for ATMega32U4 pages: 346 - 348
 [Extended bits](ICSP_Pics/ATMega32U4%20-%20Fuse%20bits%20-%20Extended.jpg), 
 [Lock bits](ICSP_Pics/ATMega32U4%20-%20Lock%20bits.jpg)  
 
-Start Notepad++ and load XML file 'C:\Program Files (x86)\AVRDUDESS\bits.xml'.  
-You can collaspse (Alt+2) & uncollaspse (Alt+Shift+2) extra 'mcu' tags. Keep 'atmega32' & 'atmega328p' visable.  
+Start **Notepad++** and load XML file 'C:\Program Files (x86)\AVRDUDESS\bits.xml'.  
+You can collaspse (Alt+2) & uncollaspse (Alt+Shift+2) extra 'mcu' tags.  
+(Keep 'atmega32' & 'atmega328p' visable.)  
 Copy and paste 'atmega328p' 'mcu' tag group (6 lines)  
 insert after 'atmega32' and change name to 'atmega32u4'.  
 <sub>Note: Bit No, and Bit Byte name from ATmel pages as you will need to change or add a few Bit names.</sub>  
@@ -42,6 +43,11 @@ Your MCU 'signature' can be verified by starting **AVRDUDESS** with
 **Programmer:** `USBtiny` ladyada version  
 **Port:** `USB`  
 
+Connect your Pro Micro to your custom wired harness(dual connectors side).  
+Confirm and connect to the ICSP header(6-pin side) on your USBtinyISP.  
+Connect the USB A/B cable.  
+Your computer should find your programmer.  
+You may need to check `Start, Control Panel, System, Device Manager` for any device driver issues.
 
 
 [AVRDUDESS](ICSP_Pics/AVRDUDESS.jpg)  
