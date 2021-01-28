@@ -87,6 +87,8 @@ Extra circuitry likely required to handle RGB LED current, microcontroller has 4
 [USBtinyISP Programmer & DIY Harness](Pics/USBtinyISP-Programmer+DIY-Harness.jpg) 
 Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-switches-experiments.html)</sub>
 
+**[How I Changed my Pro Micro Fuse bits](Changing_Fuse_Bits.md)**  
+
 **Extra expenses:**  
 Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
 or female Dupont pre-wired bundles with spare wire 24-28AWG (stranded wire for flexiblity)  
@@ -112,5 +114,3 @@ The top, I used tinted Polycarbonate sheet (0.120" thick) found at a local surpl
 The wood box measures 17" x 9" x 3⅞" in size, with a 19" x 11" Lexan top - [Trackball box](Pics/TrackBox%20Layout%20dimensions.png) dimensions;  
 wood sides have <sup>7</sup>/<sub>16</sub>" rabbet butt joints glued, and <sup>7</sup>/<sub>16</sub>" rabbet along inside bottom edge to allow 15⅞" x 7⅞" plywood panel to recess in flush. The outside bottom edge has a ¼ round routered edge.  
 Physical dimensions of [Trackball](Pics/RA-Trackball-2%20dimensions.jpg) are shimmed by four wooden blocks on right side, bottom side, and two on the bottom. Block dimensions will vary with your own inside/outside box dimensions; leave space under ball to allow lighting and "Dust Bunny" particles to fall through. Please note: that if you compare idealized dimensions to what can be seen in finished pictures; it deviates somewhat to avoid an extended masochistic hand planing session leaving ones arms as chipper as a snail on a sloth.
-
-[Here](Changing_Fuse_Bits.md)
