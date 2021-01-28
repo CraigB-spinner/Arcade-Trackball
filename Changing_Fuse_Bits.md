@@ -13,10 +13,10 @@ ICSP 6-Pin Cable coverted to Arduino Pro Micro headers.
 16  |MOSI |Yellow | 1 / 2
 14  |MISO |Green  | 2 / 3
 15  |SCK  |Blue   | 2 / 2
-21  |Vcc  |Red    | 1 / 3
-22  |RST  |Blue   | 2 / 1
-23  |Gnd  |Black  | 1 / 1
-24  |Raw  |empty  | - - -
+#21  |Vcc  |Red    | 1 / 3
+#22  |RST  |Blue   | 2 / 1
+#23  |Gnd  |Black  | 1 / 1
+#24  |Raw  |empty  | - - -
 
 
 
