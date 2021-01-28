@@ -100,7 +100,7 @@ Sanwa - 2.8mm(0.110") or Suzo-Happ - 4.8mm(0.187") female spade crimp connectors
 there's an extra wire harness and aligator clip hooking to Gnd. TX0 & RX1 are wired to the y-axis of a proto-type [Trackball](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) setup. Arduino code has been modified, tested and confirmed to work. No stutter or lag as using only USB protocol to RetroPie. No PS/2 Protocol overhead. I will be working on enclosure to finish new controller for games like **Centipede**, **Marble Madness**, **Crystal Castles**, and others.  
 
 **Video:**  
-[**Trackball in Action playing Centipede**](https://www.youtube.com/watch?v=E44fWpxooT4)<br/>
+[Trackball in Action](https://www.youtube.com/watch?v=E44fWpxooT4) playing **Centipede**<br/>
 
 ![RetroPie Logo](Pics/RetroPie%20Logo.png) RetroPie [laggy trackball](laggy_mouse.md) issues  
 
