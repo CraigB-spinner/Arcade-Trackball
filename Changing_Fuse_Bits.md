@@ -68,10 +68,12 @@ click on `Manage` and save a preset for you Pro Micro - also write down your def
 click on `Bit selector` should show the breakout of your 'Fuse & Lock bits'  
 [AVRDUDESS - Fuse & Lock bits](ICSP_Pics/AVRDUDESS%20Fuse%20%26%20Lock%20Bits.jpg)  
 'Fuse & Lock bits' panel should allow changes to bits and recalculate the new value.  
-Use **caution** when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader as incorrect settings may brick your microcontroller.  
-I recommend only changing **JTAGEN** bit unless you are thoroughly read on the operation of your micro-controller chip.  
+Use **caution** when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader,  
+as incorrect settings may brick your microcontroller.  
+I recommend only changing **JTAGEN** bit,  
+unless you are thoroughly read on the operation of your micro-controller chip.  
 Fuse bits only are changed when you do a physical write by click on `Write`  
 
 **Proceed at own risk.**  
 
-Good Luck - and May the Trackball twinkle in multiple colours!
+Good Luck - and May the Trackball Twinkle in Multiple Colours!
