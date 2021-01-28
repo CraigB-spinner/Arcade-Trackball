@@ -25,6 +25,9 @@ ATmel manual for ATMega32U4 pages: 346 - 348
 [Lock bits](ICSP_Pics/ATMega32U4%20-%20Lock%20bits.jpg)  
 
 
+[AVRDUDESS](ICSP_Pics/AVRDUDESS.jpg)  
+[AVRDUDESS - Fuse & Lock bits](ICSP_Pics/AVRDUDESS%20Fuse%20%26%20Lock%20Bits.jpg)  
+[AVRDUDESS - Configure 'bits.xml'](ICSP_Pics/AVRDUDESS%20bits.xml%20file%20update%20for%20Fuse%20%26%20Lock%20Bits.jpg)  
 
 
 **On your computer,**  
