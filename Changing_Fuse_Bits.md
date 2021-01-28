@@ -66,11 +66,11 @@ Restart AVRDUDESS
 configure: Programmer & Port  
 Select your MCU from drop-down list  
 click on `Read` for both 'Fuses & lock bits'  
-click on `Manage` and save a preset for you Pro Micro - also write down your defaults programmed into your micro-controller.  
+click on `Manage` and save a preset for your Pro Micro - also write down your defaults programmed into your micro-controller.  
 
-click on `Bit selector` should show the breakout of your 'Fuse & Lock bits'  
+click on `Bit selector` it should now show the breakout of your 'Fuse & Lock bits'  
 [AVRDUDESS - Fuse & Lock bits](ICSP_Pics/AVRDUDESS%20Fuse%20%26%20Lock%20Bits.jpg)  
-'Fuse & Lock bits' panel should allow changes to bits and recalculate the new value.  
+'Fuse & Lock bits' panel should allow changes to bits and recalculate the new byte value.  
 Use **caution** when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader,  
 as incorrect settings may brick your microcontroller.  
 I recommend only changing **JTAGEN** bit,  
