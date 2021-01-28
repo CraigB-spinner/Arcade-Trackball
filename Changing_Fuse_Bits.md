@@ -38,7 +38,7 @@ ATmel manual for ATMega32U4 pages: 346 - 348
 Start **Notepad++** and load XML file *'C:\Program Files (x86)\AVRDUDESS\bits.xml'*.  
 You can collaspse (Alt+2) & uncollaspse (Alt+Shift+2) extra *'mcu'* tags.  
 (Keep *'atmega32'* & *'atmega328p'* visible.)  
-Copy and paste *'atmega328p'* *'mcu'* tag group (6 lines)  
+Copy and paste *'atmega328p'* XML *'mcu'* tag group (6 lines)  
 insert after *'atmega32'* and change name to *'atmega32u4'*.  
 <sub>Note: Bit No, and Bit Byte name from ATmel pages as you will need to change or add a few Bit names.</sub>  
 Your MCU 'signature' can be verified by starting **AVRDUDESS** with  
