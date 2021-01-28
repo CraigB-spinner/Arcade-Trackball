@@ -6,9 +6,8 @@ Harness is a single 3x2 Female JST connector
 wired into a dual 4x1 Female JST connector, or  
 ICSP (In Circuit Serial Programming) 6-Pin Cable coverted to Arduino Pro Micro headers.
 [See here](Pics/USBtinyISP-Programmer+DIY-Harness.jpg)  
-via SPI (Serial Peripheral Interface) pins SCLK, MOSI, MISO, <span style="text-decoration: overline">SS</span> (Pro Micro held low)
-
-
+via SPI (Serial Peripheral Interface) pins SCLK, MOSI, MISO, <span style="text-decoration: overline">SS</span> (Pro Micro holds low)  
+![SPI](ICSP_Pics/SPI_single_slave.png)  
 32u4<br/>Pin |Data |wire   |USBtiny<br/>Row/Col
 --- |---- |------ |--------
 10  |D10  |empty  | - - -
