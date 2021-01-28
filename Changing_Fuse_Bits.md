@@ -1,3 +1,5 @@
+## **How I Changed my Pro Micro Fuse bits**
+
 **Pick an AVR Programmer**  
 I used an [USBtinyISP Programmer](Pics/USBtinyISP%20Programmer.jpg) with a custom wire harness to connect a Pro Micro.  
 Harness is a single 3x2 Female JST connector  
