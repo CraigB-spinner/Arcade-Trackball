@@ -74,7 +74,7 @@ Use **caution** when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader,
 as incorrect settings may brick your microcontroller.  
 I recommend only changing **JTAGEN** bit,  
 unless you are thoroughly read on the operation of your micro-controller chip.  
-Fuse bits only are changed when you do a physical write by click on `Write`  
+Fuse bits are only changed when you do a physical write by click on `Write`  
 
 **Proceed at own risk.**  
 
