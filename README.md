@@ -83,7 +83,8 @@ PORTF bits 4-6 set to output (requires fuse bit JTAGEN=1 be disabled) to control
 **Proceed at own risk.**  
 Use caution when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader as incorrect settings may brick your microcontroller.  
 Extra circuitry likely required to handle RGB LED current, microcontroller has 40mA current limits per bit without damaging Port output.  
-[Inverting MOSFET circuit](Pics/MOSFET-3-LED-Strip(red).jpg) & 
+[Inverting MOSFET circuit(Common Anode)](Pics/MOSFET-3-LED-Strip(red)-ca.jpg), 
+[Inverting MOSFET circuit(Common Cathode)](Pics/MOSFET-3-LED-Strip(red)-cc.jpg) & 
 [USBtinyISP Programmer & DIY Harness](Pics/USBtinyISP-Programmer+DIY-Harness.jpg) 
 Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-switches-experiments.html)</sub>
 
