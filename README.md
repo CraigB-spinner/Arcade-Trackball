@@ -88,7 +88,7 @@ Extra circuitry likely required to handle RGB LED current, microcontroller has 4
 [USBtinyISP Programmer & DIY Harness](Pics/USBtinyISP-Programmer+DIY-Harness.jpg) 
 Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-switches-experiments.html)</sub>
 
-**My LED driver board** required multiple redesigns due to 5050RGB LED strip board switching from positive anode side requiring a P-Channel MOSFET. I also had issues sourcing some components locally. Here is the circuit x3 and required MOSFET driver board to switch each Red, Green, Blue LED segments (66mA @ 5V, too much for direct micro-controller driving). <br/>
+**My LED driver board:**  required multiple redesigns due to 5050RGB LED strip board switching from positive anode side requiring a P-Channel MOSFET. I also had issues sourcing some components locally. Here is the circuit x3 and required MOSFET driver board to switch each Red, Green, Blue LED segments (66mA @ 5V, too much for direct micro-controller driving). <br/>
 [5050RGB circuit & pre-board](5050RGB_Pics/5050RGB%20circuit%20%26%20pre-board.jpg), 
 [5050RGB wired LED strip](5050RGB_Pics/5050RGB%20strip%20wired.jpg), 
 [5050RGB finished driver board](5050RGB_Pics/Finished%205050RGB%20driver.jpg) <br/> 
