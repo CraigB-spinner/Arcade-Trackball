@@ -59,10 +59,10 @@ Pin |Data |Button/wire  |Code
 15  |D15  |Button 10 - Start
 16  |D16  |Switch: X-Axis Opt.
 14  |D14  |Switch: Joystick Opt.
-A0  |F7/D23 |RGB Blue<sub>Out</sub> Opt.
-A1  |F6/D22 |RGB Green<sub>Out</sub> Opt.
-A2  |F5/D21 |RGB Red<sub>Out</sub> Opt.
-A3  |F4/D20 |- - -
+A0  |F7/D23 |- - -
+A1  |F6/D22 |RGB Blue<sub>Out</sub> Opt.
+A2  |F5/D21 |RGB Green<sub>Out</sub> Opt.
+A3  |F4/D20 |RGB Red<sub>Out</sub> Opt.
 Gnd |     |Gnd - Black
 Vcc |     |+5v - Red  <br/>
 
