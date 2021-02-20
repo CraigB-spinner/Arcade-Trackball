@@ -92,7 +92,7 @@ Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-s
 
 **My LED driver board:**  
 required multiple redesigns due to 5050RGB LED strip board switching from positive anode side requiring a P-Channel MOSFET. I also had issues sourcing some components locally.  
-Here is the circuit x3 and required MOSFET driver board to switch each Red, Green, Blue LED segments (66mA @ 5V is too much for direct micro-controller driving). <br/>
+Here is my circuit x3 and required MOSFET driver board to switch each Red, Green, Blue LED segments (66mA @ 5V is too much for direct micro-controller driving). <br/>
 [5050RGB circuit & pre-board](5050RGB_Pics/5050RGB%20circuit%20%26%20pre-board.jpg), 
 [5050RGB wired LED strip](5050RGB_Pics/5050RGB%20strip%20wired.jpg), 
 [5050RGB finished driver board](5050RGB_Pics/Finished%205050RGB%20driver.jpg) <br/> 
@@ -100,7 +100,8 @@ Here is the circuit x3 and required MOSFET driver board to switch each Red, Gree
 Here is my circuit design I used. Components were sourced locally, P-MOSFET is overkill at 3.0A. <br/>
 [5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
 [5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)  
-(Note: Layout displays solder side & components located on other side; Brown and Purple links correspond to passive components)   
+(Note: Layout displays solder side & components located on other side; Brown and Purple links correspond to passive components)  
+Other issues related to excessive current pull from Trackball RGB LEDs, required a separate USB Port/cable to be used to power close to 200mA current pull along with original USB cable to supply 100mA for micro-controller/buttons and dual quadrature boards from trackball.    
 
 **Extra expenses:**  
 Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
