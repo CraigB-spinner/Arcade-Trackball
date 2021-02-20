@@ -150,16 +150,24 @@ int lastButtonState[maxBut] = {1,1,1,1,1,1,0,0,1,1};
 #define xRGBcyn 0b00000110 //Cyan colour
 #define xRGBblu 0b00000100 //Blue colour
 #define xRGBmag 0b00000101 //Magenta colour
-#define rgbColours 6       //Maximum colour Hues     
-#define longTime   1000    // 1.0 seconds
-#define shortTime  166     // 1/6 second
+#define xRGBblk 0b00000000 //Black colour
+#define rgbColours 6       //Maximum colour Hues 6 / 12    
+#define longTime   750     // 3/4 second
+#define shortTime  500     // 1/2 second 166(1/6), 249(1/4), 291, 333(1/3), 500(1/2)
 #define startTime  5000    // 5.0 seconds
+#define blkTime    500     // 1/2 second
 
 //RGB LED colour 'Gray Code' sequence
+#if rgbColours == 6
 uint8_t rgbRotate[rgbColours] = {xRGBred, xRGByel, xRGBgrn, xRGBcyn, xRGBblu, xRGBmag};  
+#else
+uint8_t rgbRotate[rgbColours] = {xRGBblk, xRGBred, xRGBblk, xRGByel, xRGBblk, xRGBgrn, xRGBblk, xRGBcyn, xRGBblk, xRGBblu, xRGBblk, xRGBmag};  
+#endif
 uint8_t rgbColour  = 1;  //Next RGB colour rotation when Trackball not moving 
 uint8_t rgbColourX = 0;  //Last RGB colour displayed (excluding white - Trackball moving)
 unsigned long rgbTime;   //Stored millis() future value
+unsigned long xTime;     //Stored micros() future value
+unsigned long currTime;  //Stored micros() future value
 #endif
 
 //---------------------------------------------------------------------
@@ -251,23 +259,32 @@ void pinChangeX() {
   //Rotate to the right, Clockwise
   //State 00AB, A leads B. A0 -> AB -> 0B -> 00 0b0010 0b1011 0b1101 0b0100
   if(comboQuadratureX == 0b0010 || comboQuadratureX == 0b1011 ||
-     comboQuadratureX == 0b1101 || comboQuadratureX == 0b0100) 
+     comboQuadratureX == 0b1101 || comboQuadratureX == 0b0100) {
+  #ifdef TEST
+    if (rotPositionX == 0)
+      xTime = micros();
+  #endif
   #ifdef axisEnable
     rotPositionX += (xAxis);          //update the position of the encoder when enabled
   #else
     rotPositionX++;                   //update the position of the encoder
   #endif
-
+  }
   //Rotate to the left, Counter Clockwise
   //State 00AB, B leads A. 0B -> AB -> A0 -> 00 0b0001 0b0111 0b1110 0b1000
   if(comboQuadratureX == 0b0001 || comboQuadratureX == 0b0111 ||
-     comboQuadratureX == 0b1110 || comboQuadratureX == 0b1000) 
+     comboQuadratureX == 0b1110 || comboQuadratureX == 0b1000) {
+//  #ifdef TEST
+//    if (rotPositionX == 0)
+//      xTime = millis();
+//  #endif
   #ifdef axisEnable
     rotPositionX -= (xAxis);          //update the position of the encoder
   #else
     rotPositionX--;                   //update the position of the encoder
   #endif
- 
+  }
+  
   //Save the previous state of the A and B terminals for next time
   prevQuadratureX = currQuadratureX;
 }
@@ -344,7 +361,7 @@ void loop(){
   #else
     PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
   #endif
-    rgbTime = millis() + longTime;  //Set RGB LED time 1.0 sec. in future
+    rgbTime = millis() + longTime;  //Set RGB LED time 0.750 sec. in future
   }
   #endif 
 #endif 
@@ -360,6 +377,15 @@ void loop(){
   #else
     Mouse.move(rotPositionX,rotPositionY,0);
   #endif 
+
+    #ifdef TEST
+    if(rotPositionX > 0) {
+      currTime = micros() - xTime;;
+      Serial.print("Time: ");
+      Serial.println(currTime);
+    }
+    #endif
+    
     rotPositionX = 0;
     rotPositionY = 0;
   #ifdef rgbTrack
@@ -368,7 +394,7 @@ void loop(){
   #else
     PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
   #endif
-    rgbTime = millis() + longTime;  //Set RGB LED time 1.0 sec. in future
+    rgbTime = millis() + longTime;  //Set RGB LED time 0.750 sec. in future
   #endif 
   }
 #endif 
@@ -396,7 +422,7 @@ void loop(){
   #else
     PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
   #endif
-    rgbTime = millis() + longTime;  //Set RGB LED time 1.0 sec. in future
+    rgbTime = millis() + longTime;  //Set RGB LED time 0.750 sec. in future
   }
   #endif 
 #endif 
@@ -424,7 +450,7 @@ void loop(){
   #else
     PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
   #endif
-    rgbTime = millis() + longTime;  //Set RGB LED time 1.0 sec. in future
+    rgbTime = millis() + longTime;  //Set RGB LED time 0.750 sec. in future
   }
   #endif 
 #endif 
@@ -588,7 +614,11 @@ void loop(){
         if (rgbColour >= rgbColours) 
           rgbColour = 0;
       }
-      rgbTime = millis() + shortTime;          //Set RGB LED time 1/6 sec. in future
+      if (rgbRotate[rgbColourX] != xRGBblk)
+        rgbTime = millis() + shortTime;          //Set RGB LED time 1/2 sec. in future
+      else
+        rgbTime = millis() + blkTime;            //Set RGB LED time 1/2 sec. in future
+    
     }
   #endif
   } while (button < maxBut);
