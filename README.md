@@ -92,7 +92,7 @@ Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-s
 [5050RGB wired LED strip](5050RGB_Pics/5050RGB%20strip%20wired.jpg), 
 [5050RGB finished driver board](5050RGB_Pics/Finished%205050RGB%20driver.jpg), 
 [5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
-[5050RGB DIY circuit layout](5050RGB_Pics/5050RGB%20circuit%20Sketch_bb.jpg)  
+[5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)   
 
 
 **[How I Changed my Pro Micro Fuse bits](Changing_Fuse_Bits.md)**  
