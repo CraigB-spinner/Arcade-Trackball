@@ -88,6 +88,13 @@ Extra circuitry likely required to handle RGB LED current, microcontroller has 4
 [USBtinyISP Programmer & DIY Harness](Pics/USBtinyISP-Programmer+DIY-Harness.jpg) 
 Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-switches-experiments.html)</sub>
 
+[5050RGB circuit & pre-board](5050RGB_Pics/5050RGB%20circuit%20%26%20pre-board.jpg), 
+[5050RGB wired LED strip](5050RGB_Pics/5050RGB%20strip%20wired.jpg), 
+[5050RGB finished driver board](5050RGB_Pics/Finished%205050RGB%20driver.jpg), 
+[5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
+[5050RGB DIY circuit layout](5050RGB_Pics/5050RGB%20circuit%20Sketch_bb.jpg)  
+
+
 **[How I Changed my Pro Micro Fuse bits](Changing_Fuse_Bits.md)**  
 
 **Extra expenses:**  
