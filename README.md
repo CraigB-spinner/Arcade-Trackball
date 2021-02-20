@@ -88,6 +88,8 @@ Extra circuitry likely required to handle RGB LED current, microcontroller has 4
 [USBtinyISP Programmer & DIY Harness](Pics/USBtinyISP-Programmer+DIY-Harness.jpg) 
 Note: [using MOSFETs](http://electronicsadventures.blogspot.com/2017/03/mosfet-switches-experiments.html)</sub>
 
+**[How I Changed my Pro Micro Fuse bits](Changing_Fuse_Bits.md)**  
+
 **My LED driver board:**  
 required multiple redesigns due to 5050RGB LED strip board switching from positive anode side requiring a P-Channel MOSFET. I also had issues sourcing some components locally. Here is the circuit x3 and required MOSFET driver board to switch each Red, Green, Blue LED segments (66mA @ 5V is too much for direct micro-controller driving). <br/>
 [5050RGB circuit & pre-board](5050RGB_Pics/5050RGB%20circuit%20%26%20pre-board.jpg), 
@@ -98,9 +100,6 @@ Here is my circuit design I used. Components were sourced locally, P-MOSFET is o
 [5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
 [5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)  
 (Note: Layout displays solder side & components located on other side; Brown and Purple links correspond to passive components)   
-
-
-**[How I Changed my Pro Micro Fuse bits](Changing_Fuse_Bits.md)**  
 
 **Extra expenses:**  
 Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
