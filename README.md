@@ -57,6 +57,10 @@ Pin |Data |Button/wire  |Code
 9   |D9   |Button 6 - R
 10  |D10  |Button 9 - Select
 15  |D15  |Button 10 - Start
+A0  |F7   |RGB Blue
+A1  |F6   |RGB Green
+A2  |F5   |RGB Red
+A3  |F4   |- - -
 Gnd |     |Gnd - Black
 Vcc |     |+5v - Red  <br/>
 
