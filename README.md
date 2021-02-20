@@ -57,14 +57,15 @@ Pin |Data |Button/wire  |Code
 9   |D9   |Button 6 - R
 10  |D10  |Button 9 - Select
 15  |D15  |Button 10 - Start
+Gnd |     |Gnd - Black
+Vcc |     |+5v - Red
 16  |D16  |Switch: X-Axis Opt.
 14  |D14  |Switch: Joystick Opt.
 A0  |F7/D23 |- - -
 A1  |F6/D22 |RGB Blue<sub>Out</sub> Opt.
 A2  |F5/D21 |RGB Green<sub>Out</sub> Opt.
-A3  |F4/D20 |RGB Red<sub>Out</sub> Opt.
-Gnd |     |Gnd - Black
-Vcc |     |+5v - Red  <br/>
+A3  |F4/D20 |RGB Red<sub>Out</sub> Opt. <br/>
+
 
 I believe the trackball encoder A/B output is reversed as you move the ball and not the roller directly. The code has been tested and trackball moves in the proper direction, so, the code was left as is. The Opto encoder board is also used for steerwheel devices.<br/>I am using Xbox A/B, X/Y configuration, Nintendo protocol is B/A, Y/X reversed controls (Japanese cultural differences). 
 You can assign buttons to any assignment in RetroArch but it is best to pick a consistent pattern across all controllers to avoid confusion.  <br/>
