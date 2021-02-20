@@ -57,11 +57,11 @@ Pin |Data |Button/wire  |Code
 9   |D9   |Button 6 - R
 10  |D10  |Button 9 - Select
 15  |D15  |Button 10 - Start
-16  |D16  |Switch - X-Axis 
-14  |D14  |Switch - Joystick
-A0  |F7/D23 |RGB Blue<sub>Out</sub>
-A1  |F6/D22 |RGB Green<sub>Out</sub>
-A2  |F5/D21 |RGB Red<sub>Out</sub>
+16  |D16  |Switch: X-Axis Opt.
+14  |D14  |Switch: Joystick Opt.
+A0  |F7/D23 |RGB Blue<sub>Out</sub> Opt.
+A1  |F6/D22 |RGB Green<sub>Out</sub> Opt.
+A2  |F5/D21 |RGB Red<sub>Out</sub> Opt.
 A3  |F4/D20 |- - -
 Gnd |     |Gnd - Black
 Vcc |     |+5v - Red  <br/>
@@ -112,9 +112,9 @@ Other issues related to excessive current pull from added new Trackball RGB LEDs
 
 **Extra expenses:**  
 Dupont connectors 2.54mm pitch JST SM kit (requires special crimper)  
-or female Dupont pre-wired bundles with spare wire 24-28AWG (stranded wire for flexiblity)  
-Sanwa - 2.8mm(0.110") or Suzo-Happ - 4.8mm(0.187") female spade crimp connectors for arcade button ends  
-Special Trackball lighting with [RGB 5050 LED Strip](https://www.amazon.ca/gp/product/B08FMB85WD/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1), and 
+or female Dupont pre-wired bundles with spare wire 24-28AWG (stranded wire for flexiblity),  
+Sanwa - 2.8mm(0.110") or Suzo-Happ - 4.8mm(0.187") female spade crimp connectors for arcade button ends,  
+Special Trackball lighting with [RGB 5050 LED Strip](https://www.amazon.ca/gp/product/B08FMB85WD/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1), and  
 Special function switches with [TTP223 Capacitive Touch Switch](https://www.amazon.ca/gp/product/B07JDH7KHN/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)  
 <br/>
 **For the more observant** in pictures 
