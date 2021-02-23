@@ -105,14 +105,25 @@ Here is my circuit x3 and required MOSFET driver board to switch each Red, Green
 [5050RGB wired LED strip](5050RGB_Pics/5050RGB%20strip%20wired.jpg), 
 [5050RGB finished driver board](5050RGB_Pics/Finished%205050RGB%20driver.jpg) <br/> 
 
-Here is my circuit design I used. Components were sourced locally, P-MOSFET is overkill at 3.0A. <br/>
+<div id="video-wrap">
+   <iframe style="float: left; width: 120px; height: 90px;" 
+           src="5050RGB_Pics/Trackball_RGB-120x90.mp4" type="video/mp4" 
+           allow="autoplay *" 
+           allow="loop *" 
+           allow="muted *" 
+           frameborder="0" allowfullscreen>
+   </iframe>
+</div>
+Here is my circuit design I used. Components were sourced locally, <br/>
+P-MOSFET is overkill at 3.0A. 
 [5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
 [5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)  
 (Note: Layout displays solder side & components located on other side; Brown and Purple links correspond to passive components)  
-<div id="video-wrap">
-   <iframe style="float: left; width: 120px; height: 90px;" src="5050RGB_Pics/Trackball_RGB-120x90.mp4" type="video/mp4" allow="autoplay loop muted *" frameborder="0" allowfullscreen>
-   </iframe>
-</div>
+
+P-MOSFET is overkill at 3.0A. 
+[5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
+[5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)  
+(Note: Layout displays solder side & components located on other side; Brown and Purple links correspond to passive components)  
 
 Other issues related to excessive current pull from added new Trackball RGB LEDs, required a separate USB Port/cable to be used to power close to 200mA current pull along with original USB cable to supply 100mA for micro-controller/switches/buttons and dual quadrature encoder boards from trackball. Trackball voltages at encoder boards were floating around 4.5V and operating without issues; however, when RGB LEDS were added voltage dropped to low 3V range triggering false signal pulses to the micro-controlller. A heavy duty USB cable capable of carrying current 3A or over (24AWG) may have solved the problem, but I just used a separate USB cable to supply the new needs of the RGB LEDs. Note: you must tie grounds(negative) together for equal Gnd levels; DO NOT tie +5v together.  
 <video autoplay loop muted>
