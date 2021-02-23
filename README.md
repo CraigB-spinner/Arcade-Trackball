@@ -112,7 +112,7 @@ Here is my circuit x3 and required MOSFET driver board to switch each Red, Green
            frameborder="5" allowfullscreen>
    </iframe>
 </div>
-1-Here is my circuit design I used. Components were sourced locally, P-MOSFET is <br/>
+2-Here is my circuit design I used. Components were sourced locally, P-MOSFET is <br/>
 overkill at 3.0A. 
 [5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
 [5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)  
