@@ -110,6 +110,9 @@ Here is my circuit design I used. Components were sourced locally, P-MOSFET is o
 [5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)  
 (Note: Layout displays solder side & components located on other side; Brown and Purple links correspond to passive components)  
 ![Trackball RGB](5050RGB_Pics/Trackball_RGB-120x90.mp4) <br/>
+<video width="120" height="90" controls>
+  <source src="5050RGB_Pics/Trackball_RGB-120x90.mp4" type="video/mp4">
+</video> <br/>
 Other issues related to excessive current pull from added new Trackball RGB LEDs, required a separate USB Port/cable to be used to power close to 200mA current pull along with original USB cable to supply 100mA for micro-controller/switches/buttons and dual quadrature encoder boards from trackball. Trackball voltages at encoder boards were floating around 4.5V and operating without issues; however, when RGB LEDS were added voltage dropped to low 3V range triggering false signal pulses to the micro-controlller. A heavy duty USB cable capable of carrying current 3A or over (24AWG) may have solved the problem, but I just used a separate USB cable to supply the new needs of the RGB LEDs. Note: you must tie grounds(negative) together for equal Gnd levels; DO NOT tie +5v together.  
 
 **Extra expenses:**  
