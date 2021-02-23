@@ -106,21 +106,19 @@ Here is my circuit x3 and required MOSFET driver board to switch each Red, Green
 [5050RGB finished driver board](5050RGB_Pics/Finished%205050RGB%20driver.jpg) <br/> 
 
 <div id="video-wrap">
-   <iframe style="float: left; width: 120px; height: 90px;" 
+   <iframe style="float: left; width: 120px; height: 100px;" 
+           allow="autoplay *; loop *; muted *" 
            src="5050RGB_Pics/Trackball_RGB-120x90.mp4" type="video/mp4" 
-           allow="autoplay *" 
-           allow="loop *" 
-           allow="muted *" 
-           frameborder="0" allowfullscreen>
+           frameborder="5" allowfullscreen>
    </iframe>
 </div>
 Here is my circuit design I used. Components were sourced locally, <br/>
 P-MOSFET is overkill at 3.0A. 
 [5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
 [5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)  
-(Note: Layout displays solder side & components located on other side; Brown and Purple links correspond to passive components)  
+(Note: Layout displays solder side & components located on other side;  
+Brown and Purple links correspond to passive components)  
 
-P-MOSFET is overkill at 3.0A. 
 [5050RGB My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg), 
 [5050RGB DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg)  
 (Note: Layout displays solder side & components located on other side; Brown and Purple links correspond to passive components)  
