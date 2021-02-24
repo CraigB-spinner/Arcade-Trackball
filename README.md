@@ -108,7 +108,7 @@ Here is my circuit x3 and required MOSFET driver board to switch each Red, Green
 <div id="video-wrap">
    <iframe style="float: left; width: 120px; height: 100px;" 
            allow="muted; autoplay; loop" 
-           src="5050RGB_Pics/Trackball_RGB-120x90.mp4" type="video/mp4" 
+           src="5050RGB_Pics/Trackball_RGB-120x90.mp4?autoplay=1&mute=1" type="video/mp4" 
            frameborder="10" allowfullscreen>
    </iframe>
 </div>
