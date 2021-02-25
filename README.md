@@ -107,10 +107,13 @@ Here is my circuit x3 and required MOSFET driver board to switch each Red, Green
 
 <div id="video-wrap">
    <iframe style="float: right; width: 120px; height: 100px;" 
-      src="5050RGB_Pics/Trackball_RGB-120x90.mp4?background=1" width="120" height="100" frameborder="0" allowfullscreen>
+<video autoplay loop muted>
+   <source src="5050RGB_Pics/Trackball_RGB-120x90.mp4" type="video/mp4">
+</video> 
+>
    </iframe>
 </div>
-3-Here is the circuit design I used for 5050RGB strip: 
+2-Here is the circuit design I used for 5050RGB strip: 
 [My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg) and, 
 [DIY circuit layout](5050RGB_Pics/RGB5050%20circuit%20Sketch_bb.jpg) <br/>
 Components were sourced locally, P-MOSFET is overkill at 3.0A.  
