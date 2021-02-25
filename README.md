@@ -107,7 +107,7 @@ Here is my circuit x3 and required MOSFET driver board to switch each Red, Green
    <video autoplay loop muted>
       <source src="5050RGB_Pics/Trackball_RGB-120x90.mp4" type="video/mp4">
    </video>
-<sub>White balance, blue shifted with Camera's auto-exposure & mild green LEDs (colours differ in-person)</subp>  
+<sub>White balance, blue shifted with Camera's auto-exposure & mild green LEDs (colours differ in-person)</sub>  
 <sup>-> White to Bluish White, Red, Yellow, Green, Cyan, Blue, Magenta</sup>  
 Here is the circuit design I used for 5050RGB strip: 
 [My circuit](5050RGB_Pics/MOSFET-3-LED-Strip(red)-cc-3.jpg) and, 
