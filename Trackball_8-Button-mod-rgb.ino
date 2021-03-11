@@ -15,7 +15,10 @@
 *                   Craig B - Added code for PortF output to PF4-7 pins from early Jan 2021   
 *                             Requires unprogrammed of fuse bit, JTAGEN = 1, to disabled JTAG state 
 *                             and enable extra Data Pins on PortF using an USBtinyISP Programmer with AVRDUDESS (Not easy straight forward/risky)   
-*    
+*                   Craig B - Added code for 6 or 12 RGB LED colour sequence using directive rgbColours from early Feb 2021   
+*                   Craig B - Added code for 1/4 second black RGB LED startup using directive blkstTime from early March 2021   
+*                             RGB subroutines: next_RGBcolour(), statrtup_RGBblk(), statrtup_RGBwht(), turn_RGBwht()
+*                       
 *    This program is free software: you can redistribute it and/or modify
 *    it under the terms of the GNU General Public License as published by
 *    the Free Software Foundation, either version 3 of the License, or
@@ -142,7 +145,7 @@ int lastButtonState[maxBut] = {1,1,1,1,1,1,0,0,1,1};
 //otherwise use BS170 MOSFETs to handle upto 500mA (remember USB 2.0 current limits)
 #ifdef rgbTrack
 #define xRGBNeg            //RGB Led - Negative(common anode) or comment out for Positive(common cathode)
-#define xRGB    0b01110000 //PortF registers
+#define xRGB    0b01110000 //PortF registers used
 #define xRGBwht 0b00000111 //White colour
 #define xRGBred 0b00000001 //Red colour
 #define xRGByel 0b00000011 //Yellow colour
@@ -156,6 +159,8 @@ int lastButtonState[maxBut] = {1,1,1,1,1,1,0,0,1,1};
 #define shortTime  500     // 1/2 second 166(1/6), 249(1/4), 291, 333(1/3), 500(1/2)
 #define startTime  5000    // 5.0 seconds
 #define blkTime    500     // 1/2 second
+#define blkstTime  250     // 1/4 second   //add 1/4 sec delayed start of LED - comment out to disable
+bool blkst = 1;
 
 //RGB LED colour 'Gray Code' sequence
 #if rgbColours == 6
@@ -169,6 +174,12 @@ unsigned long rgbTime;   //Stored millis() future value
 unsigned long xTime;     //Stored micros() future value
 unsigned long currTime;  //Stored micros() future value
 #endif
+
+void next_RGBcolour();
+void statrtup_RGBblk();
+void statrtup_RGBwht();
+void turn_RGBwht();
+
 
 //---------------------------------------------------------------------
 void setup() {
@@ -224,14 +235,12 @@ void setup() {
 //Data Direction Register - PORTF bits set for Output
   DDRF = xRGB;             
 //Start RGB LED - White
-#ifdef xRGBNeg
-  PORTF = PORTF & ~xRGB | (xRGBwht << 4);
+#ifndef blkstTime
+  statrtup_RGBwht();
 #else
-  PORTF = PORTF & ~xRGB | (~xRGBwht << 4);     
+  statrtup_RGBblk();
 #endif
-//Start RGB LED time 5.0 sec. in future
-  rgbTime = millis() + startTime;
-#endif  
+#endif
 }
 
 //may want to add mouse left, mid, right button press functionality instead joystick buttons at code bottom
@@ -355,14 +364,8 @@ void loop(){
     moveMouse = true;
   }
   #ifdef rgbTrack
-  if (moveMouse) {
-  #ifdef xRGBNeg
-    PORTF = PORTF & ~xRGB | (xRGBwht << 4);  //Set RGB LED - White
-  #else
-    PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
-  #endif
-    rgbTime = millis() + longTime;  //Set RGB LED time 0.750 sec. in future
-  }
+  if (moveMouse) 
+    turn_RGBwht();
   #endif 
 #endif 
 
@@ -378,23 +381,18 @@ void loop(){
     Mouse.move(rotPositionX,rotPositionY,0);
   #endif 
 
-    #ifdef TEST
+  #ifdef TEST
     if(rotPositionX > 0) {
       currTime = micros() - xTime;;
       Serial.print("Time: ");
       Serial.println(currTime);
     }
-    #endif
+  #endif
     
     rotPositionX = 0;
     rotPositionY = 0;
   #ifdef rgbTrack
-  #ifdef xRGBNeg
-    PORTF = PORTF & ~xRGB | (xRGBwht << 4);  //Set RGB LED - White
-  #else
-    PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
-  #endif
-    rgbTime = millis() + longTime;  //Set RGB LED time 0.750 sec. in future
+    turn_RGBwht();
   #endif 
   }
 #endif 
@@ -416,14 +414,8 @@ void loop(){
     moveMouse = true;
   }
   #ifdef rgbTrack
-  if (moveMouse) {
-  #ifdef xRGBNeg
-    PORTF = PORTF & ~xRGB | (xRGBwht << 4);  //Set RGB LED - White
-  #else
-    PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
-  #endif
-    rgbTime = millis() + longTime;  //Set RGB LED time 0.750 sec. in future
-  }
+  if (moveMouse) 
+    turn_RGBwht();
   #endif 
 #endif 
 
@@ -444,14 +436,8 @@ void loop(){
     moveMouse = true;
   }
   #ifdef rgbTrack
-  if (moveMouse) {
-  #ifdef xRGBNeg
-    PORTF = PORTF & ~xRGB | (xRGBwht << 4);  //Set RGB LED - White
-  #else
-    PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
-  #endif
-    rgbTime = millis() + longTime;  //Set RGB LED time 0.750 sec. in future
-  }
+  if (moveMouse) 
+    turn_RGBwht();
   #endif 
 #endif 
 // *** Trackball movement logic ***
@@ -590,36 +576,87 @@ void loop(){
       
     //Save the last button state for each button for next time
     lastButtonState[button] = currentButtonState;
-
     ++button;
 
+  //RGB LED Colour rainbow cycling
   #ifdef rgbTrack
-    //RGB LED Colour rainbow cycling
     if (rgbTime < millis()) {
-    #ifdef xRGBNeg
-      if ((PINF & xRGB) == (xRGBwht << 4)) {    //Is RGB LED White - Vcc control
-        PORTF = PORTF & ~xRGB | (rgbRotate[rgbColourX] << 4);  //Set RGB LED - last Colour
+    #ifndef blkstTime //Normal colour rotation - No delayed start
+      next_RGBcolour();
     #else
-      if ((PINF & xRGB) == (~xRGBwht << 4)) {    //Is RGB LED White - Vcc control
-        PORTF = PORTF & ~xRGB | (~rgbRotate[rgbColourX] << 4); //Set RGB LED - last Colour
-    #endif
-      } else {
-    #ifdef xRGBNeg
-        PORTF = PORTF & ~xRGB | (rgbRotate[rgbColour] << 4);  //Set RGB LED - next Colour
-    #else
-        PORTF = PORTF & ~xRGB | (~rgbRotate[rgbColour] << 4); //Set RGB LED - last Colour
-    #endif
-        rgbColourX = rgbColour;
-        ++rgbColour;
-        if (rgbColour >= rgbColours) 
-          rgbColour = 0;
-      }
-      if (rgbRotate[rgbColourX] != xRGBblk)
-        rgbTime = millis() + shortTime;          //Set RGB LED time 1/2 sec. in future
-      else
-        rgbTime = millis() + blkTime;            //Set RGB LED time 1/2 sec. in future
-    
+      if ( blkst ) {  //5.0 second white start after 1/4 sec LED off initial delayed start
+        statrtup_RGBwht();
+        blkst = 0;
+      } else          //Normal colour rotation
+        next_RGBcolour();  
+    #endif  
     }
   #endif
   } while (button < maxBut);
 }
+
+//---------------------------------------------------------------------
+//RGB subroutines: next_RGBcolour(), statrtup_RGBblk(), statrtup_RGBwht(), turn_RGBwht()
+//used for ease of reading with limited overhead (No parameter push/pop overhead)
+//---------------------------------------------------------------------
+#ifdef rgbTrack
+void next_RGBcolour() {
+  #ifdef xRGBNeg
+    if ((PINF & xRGB) == (xRGBwht << 4))      //Is RGB LED White - Vcc control
+      PORTF = PORTF & ~xRGB | (rgbRotate[rgbColourX] << 4);  //Set RGB LED - last Colour
+  #else
+    if ((PINF & xRGB) == (~xRGBwht << 4))     //Is RGB LED White - Vcc control
+      PORTF = PORTF & ~xRGB | (~rgbRotate[rgbColourX] << 4); //Set RGB LED - last Colour
+  #endif
+    else 
+  #ifdef xRGBNeg
+      PORTF = PORTF & ~xRGB | (rgbRotate[rgbColour] << 4);  //Set RGB LED - next Colour
+  #else
+      PORTF = PORTF & ~xRGB | (~rgbRotate[rgbColour] << 4); //Set RGB LED - last Colour
+  #endif
+    rgbColourX = rgbColour;
+    ++rgbColour;
+    if (rgbColour >= rgbColours) 
+      rgbColour = 0;
+
+    if (rgbRotate[rgbColourX] != xRGBblk)
+      rgbTime = millis() + shortTime;          //Set RGB LED time 1/2 sec. in future
+    else
+      rgbTime = millis() + blkTime;            //Set RGB LED time 1/2 sec. in future
+}
+
+//---------------------------------------------------------------------
+#ifdef blkstTime
+void statrtup_RGBblk() {
+  #ifdef xRGBNeg
+    PORTF = PORTF & ~xRGB | (xRGBblk << 4);  //Set RGB LED - Black
+  #else
+    PORTF = PORTF & ~xRGB | (~xRGBblk << 4); //Set RGB LED - Black    
+  #endif
+  //Start RGB LED time 1/4 sec. in future
+    rgbTime = millis() + blkstTime;
+}
+#endif
+
+//---------------------------------------------------------------------
+void statrtup_RGBwht() {
+  #ifdef xRGBNeg
+    PORTF = PORTF & ~xRGB | (xRGBwht << 4);  //Set RGB LED - White
+  #else
+    PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White
+  #endif
+  //Start RGB LED time 5.0 sec. in future
+    rgbTime = millis() + startTime;
+}
+
+//---------------------------------------------------------------------
+void turn_RGBwht() {
+  #ifdef xRGBNeg
+    PORTF = PORTF & ~xRGB | (xRGBwht << 4);  //Set RGB LED - White
+  #else
+    PORTF = PORTF & ~xRGB | (~xRGBwht << 4); //Set RGB LED - White    
+  #endif
+  //Set RGB LED time 3/4 sec. in future
+    rgbTime = millis() + longTime;  
+}
+#endif
