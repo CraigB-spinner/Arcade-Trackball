@@ -104,8 +104,8 @@ Here is my circuit x3 and required MOSFET driver board to switch each Red, Green
 [5050RGB circuit & pre-board](5050RGB_Pics/5050RGB%20circuit%20%26%20pre-board.jpg), 
 [5050RGB wired LED strip](5050RGB_Pics/5050RGB%20strip%20wired.jpg), 
 [5050RGB finished driver board](5050RGB_Pics/Finished%205050RGB%20driver.jpg) <br/> 
-<sub>White balance, blue shifted with Camera's auto-exposure & mild green LEDs (colours differ in-person)</sub>  
-<sup>➙White to Bluish White, Red, Yellow, Green, Cyan, Blue, Magenta</sup>  
+<sub>starting RGB White then dims from camera's auto-exposure (colours may differ in-person)</sub>  
+<sup>➙White to Red, Yellow, Green, Cyan, Blue, Magenta...</sup>  
    <video autoplay loop muted>
       <source src="5050RGB_Pics/Trackball_RGB-120x90-1810.mp4" type="video/mp4">
    </video>
