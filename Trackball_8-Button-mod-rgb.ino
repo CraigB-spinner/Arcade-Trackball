@@ -156,11 +156,11 @@ int lastButtonState[maxBut] = {1,1,1,1,1,1,0,0,1,1};
 #define xRGBblk 0b00000000 //Black colour
 #define rgbColours 6       //Maximum colour Hues 6 / 12    
 #define longTime   750     // 3/4 second
-#define shortTime  500     // 1/2 second 166(1/6), 249(1/4), 291, 333(1/3), 500(1/2)
+#define shortTime  500     // 1/2 second 166(1/6), 250(1/4), 292(7/24), 333(1/3), 500(1/2)
 #define startTime  5000    // 5.0 seconds
 #define blkTime    500     // 1/2 second
-#define blkstTime  250     // 1/4 second   //add 1/4 sec delayed start of LED - comment out to disable
-bool blkst = 1;
+#define blkstTime  250     // 1/4 second - add delayed start of LED - comment out to disable
+bool blkst = true;
 
 //RGB LED colour 'Gray Code' sequence
 #if rgbColours == 6
@@ -171,8 +171,8 @@ uint8_t rgbRotate[rgbColours] = {xRGBblk, xRGBred, xRGBblk, xRGByel, xRGBblk, xR
 uint8_t rgbColour  = 1;  //Next RGB colour rotation when Trackball not moving 
 uint8_t rgbColourX = 0;  //Last RGB colour displayed (excluding white - Trackball moving)
 unsigned long rgbTime;   //Stored millis() future value
-unsigned long xTime;     //Stored micros() future value
-unsigned long currTime;  //Stored micros() future value
+unsigned long xTime;     //Stored micros() future value - used in TEST
+unsigned long currTime;  //Stored micros() future value - used in TEST
 #endif
 
 void next_RGBcolour();
@@ -238,7 +238,7 @@ void setup() {
 #ifndef blkstTime
   statrtup_RGBwht();
 #else
-  statrtup_RGBblk();
+  statrtup_RGBblk();  // 1/4 second delay before start RGB LED - White
 #endif
 #endif
 }
@@ -586,7 +586,7 @@ void loop(){
     #else
       if ( blkst ) {  //5.0 second white start after 1/4 sec LED off initial delayed start
         statrtup_RGBwht();
-        blkst = 0;
+        blkst = false;
       } else          //Normal colour rotation
         next_RGBcolour();  
     #endif  
@@ -605,7 +605,7 @@ void next_RGBcolour() {
     if ((PINF & xRGB) == (xRGBwht << 4))      //Is RGB LED White - Vcc control
       PORTF = PORTF & ~xRGB | (rgbRotate[rgbColourX] << 4);  //Set RGB LED - last Colour
   #else
-    if ((PINF & xRGB) == (~xRGBwht << 4))     //Is RGB LED White - Vcc control
+    if ((PINF & xRGB) == (~xRGBwht << 4))     //Is RGB LED White - Gnd control
       PORTF = PORTF & ~xRGB | (~rgbRotate[rgbColourX] << 4); //Set RGB LED - last Colour
   #endif
     else 
