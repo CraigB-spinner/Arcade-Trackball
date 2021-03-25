@@ -132,6 +132,7 @@ there's an extra wire harness and aligator clip hooking to Gnd. TX0 & RX1 are wi
 
 **Video:**  
 [Trackball in Action](https://www.youtube.com/watch?v=E44fWpxooT4) playing **Centipede**<br/>
+[Trackball in Action](https://youtu.be/Nwyvn5b7OW4) playing **Crystal Castles**<br/>
 
 ![RetroPie Logo](Pics/RetroPie%20Logo.png) RetroPie [laggy trackball](laggy_mouse.md) issues  
 
