@@ -4,16 +4,16 @@ Arcade Trackball - based off Spinner version 2
 ![Trackball](Pics/IMG_3843.jpg)  
 **Using an Arduino Pro Micro - DIY Trackball Controller**  
 At sub $10 USD, it is a substitute to Ultimarc's U-HID Nano @ $35 + shipping - You do the HID device coding...<br/><br/> 
-**Code to follow:** New additional interrupts, movement y-axis processing and both x/y axes handling.<br/>
-**Oct 12/20:** Code now availble, see extra pictures of finished Trackball box.  
-**Dec 16/20:** Added code for x-axis disable (Golf game driver - no hook/slice cheat).  
-**Dec 16/20:** Uploaded new code for override Joystick directions mod (using buttons for menu).  
-**Jan 15/21:** Uploaded new code for Trackball six colour rotation using a RGB 5050 LED Strip.  
+**Code to follow:** New additional y-axis interrupt & movement processing for both x/y axes handling.<br/>
+**Oct. 12/20:** Code now availble, see extra pictures of finished Trackball box.  
+**Dec. 16/20:** Added code for x-axis disable (Golf game driver - no hook/slice cheat).  
+**Dec. 16/20:** Uploaded new code for override Joystick directions mod (using buttons for menu).  
+**Jan. 15/21:** Uploaded new code for Trackball six colour rotation using a RGB 5050 LED Strip.  
 <sup>(Use of programmer is required to unprogram fuse bit, JTAGEN = 1)</sup>  
-**Jan 26/21:** Uploaded new code for Mouse only Trackball operation. Note: all buttons can be inactivated for Trackball-Only operation.  
-**Feb 19/21:** Updated code for Trackball six colour RGB 5050 LED Strip.
+**Jan. 26/21:** Uploaded new code for Mouse only Trackball operation. Note: all buttons can be inactivated for Trackball-Only operation.  
+**Feb. 19/21:** Updated code for Trackball six colour RGB 5050 LED Strip.
 <br/><br/>
-This project uses an Arduino Pro Micro clone, arcade trackball, with 8 buttons (up to 10) for use with MAME or any other emulator which can use x-axis and y-axis of mouse device as a trackball controller. Code should work on any board using an ATmega32U4 as long as the port pins are mapped to the same "digital pins" as the [Pro Micro](Pics/Arduino%20Pro%20Micro%20Atmega32u4.jpg).  
+This project uses an Arduino Pro Micro clone, arcade trackball, with 8 buttons (up to 10) for use with MAME or any other emulator which can use x-axis and y-axis of mouse device as a trackball controller. Code should work on any board using an ATmega32U4 as long as port pins are mapped to same "digital pins" as [Pro Micro](Pics/Arduino%20Pro%20Micro%20Atmega32u4.jpg).  
 To construct, you will need an older non-PS/2 style trackball which can operate at 5v along with some momentary switches plus Arduino micro controller. 
 This [trackball](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), RA-TRACKBALL-2, uses the [red Opto boards](Pics/Red_Board_Pinout.jpg), A052-1011-00, and not the green PS/2 Opto board pair. It is unknown if the Jamma 60-in-1 (6-pin header) style trackballs use quadrature rotary encoder pulses for x/y axes like for Game Elf Jamma 138/276/352/485/619/1162-in-1, etc. (10-pin header/dual player) boards or board pair output PS/2 (DIR/CLK) protocol. AliExpress does show a Jamma 60-in-1 board with trackball using 6-pin header & 10-pin header harness, but would require closer look at encoder boards.<br/> 
 [**TrackBall** used](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) (clone of SuzoHapp style trackball by RetroArcade.us)<br/>
