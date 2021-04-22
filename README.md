@@ -88,7 +88,7 @@ Note: Invert the Touch I/O state by shorting [contact A to Vcc](Pics/TTP223B_chi
 <sub>2. Trackball colour rotation using a [RGB 5050 LED Strip](Pics/RGB5050_board.jpg) and  
 PORTF bits 4-6 set to output (requires fuse bit JTAGEN=1 be disabled) to control each colour LED (Red, Green Blue).  
 **Proceed at own risk.**  
-You may not require an ISP Programmer, if fuse bit JTAGEN=1 has been factory set. You will need to test confirm with LED and resistor anyway.  
+You may not require an ISP Programmer, if fuse bit JTAGEN=1 has been factory set. You will need to test confirm with LED and resistor anyway. 
 Use caution when reprograming Fuse bits (L-FF, H-D8, E-C8) & Bootloader as incorrect settings may brick your microcontroller.  
 Extra circuitry likely required to handle RGB LED current, microcontroller has 40mA current limits per bit without damaging Port output.  
 [Inverting MOSFET circuit (Common Anode)](Pics/MOSFET-3-LED-Strip(red)-ca.jpg), 
