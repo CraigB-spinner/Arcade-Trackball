@@ -41,7 +41,7 @@ You can collaspse (Alt+2) & uncollaspse (Alt+Shift+2) extra *'mcu'* tags.
 (Keep *'atmega32'* & *'atmega328p'* visible.)  
 Copy and paste *'atmega328p'* XML *'mcu'* tag group (6 lines)  
 insert after *'atmega32'* and change name to *'atmega32u4'*.  
-<sub>Note: 'Bit No', and 'Bit Byte name' from ATmel pages as you will need to change or add a few 'Bit Byte names'.</sub>  
+<sub>Note: 'Bit No', and 'Bit Byte name' from ATmel pages; as you will need to change or add a few 'Bit Byte names'.</sub>  
 When finished should look like [AVRDUDESS - Configure *'bits.xml'*](ICSP_Pics/AVRDUDESS%20bits.xml%20file%20update%20for%20Fuse%20%26%20Lock%20Bits.jpg)  
 Save your updated bits.xml file.  
 
