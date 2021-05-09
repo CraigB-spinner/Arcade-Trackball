@@ -69,6 +69,8 @@ A3  |F4/D20 |RGB Red<sub>Out</sub> Opt. <br/>
 
 I believe the trackball encoder A/B output is reversed as you move the ball and not the roller directly. The code has been tested and trackball moves in the proper direction, so, the code was left as is. This Opto encoder board is also used for steerwheel devices.<br/>I am using Xbox A/B, X/Y configuration, Nintendo protocol is B/A, Y/X reversed controls (Japanese cultural differences). 
 You can assign buttons to any assignment in RetroArch but it is best to pick a consistent pattern across all controllers to avoid confusion.  <br/>
+
+Some [trouble shooting](trouble_shoot.md) with your controller  
    
 **The Code:**<br/>
 There are four versions of code: Pick your code to use
