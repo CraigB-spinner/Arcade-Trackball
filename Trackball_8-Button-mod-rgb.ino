@@ -46,8 +46,8 @@
 
 // Port Bit/Pin layout   
 //      Bit - 76543210 - Silk screen ## - Micro-Controller
-#define xPD3 0b00001000 //Digital Pin 0  - Micro/PRO Micro - RX,  INT2
-#define xPD2 0b00000100 //Digital Pin 1  - Micro/PRO Micro - TX,  INT3
+#define xPD3 0b00001000 //Digital Pin 0  - Micro/PRO Micro - TX,  INT3
+#define xPD2 0b00000100 //Digital Pin 1  - Micro/PRO Micro - RX,  INT2
 #define xPD1 0b00000010 //Digital Pin 2  - Micro/PRO Micro - SDA, INT0
 #define xPD0 0b00000001 //Digital Pin 3  - Micro/PRO Micro - SCL, INT1
 #define xPD_10 (xPD1 | xPD0)
