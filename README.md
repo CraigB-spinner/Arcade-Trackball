@@ -45,10 +45,10 @@ Buttons 1-6, plus 9-select(coin), and 10-start(player)<br/>
 
 Pin |Data |Button/wire  |Code
 --- |---- |------------ |----
-0   |D1   |Y<sub>A</sub> trackball - Yellow |PinD
-1   |D0   |Y<sub>B</sub> trackball - Green |PinC
-2   |D2   |X<sub>B</sub> trackball - Blue |PinA
-3   |D3   |X<sub>A</sub> trackball - Purple |PinB
+0   |D1   |Y<sub>A</sub> trackball - Purple |PinD
+1   |D0   |Y<sub>B</sub> trackball - Blue |PinC
+2   |D2   |X<sub>B</sub> trackball - Green |PinA
+3   |D3   |X<sub>A</sub> trackball - Yellow |PinB
 4   |D4   |Button 1 - X
 5   |D5   |Button 2 - A
 6   |D6   |Button 3 - B
