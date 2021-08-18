@@ -38,7 +38,7 @@ Code uses Atmega32u4 ports directly because that's faster (over x30) than using 
 **Extra info:**<br/>
 Wiring: [See diagram](Pics/Trackball%20Sketch_bb.jpg) <br/>
 Vcc (+5V) and Gnd output wires red and black<br/>
-Trackball A(X<sub>A</sub>), B(X<sub>B</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>) output wires purple, blue, yellow and green.<br/>
+Trackball A(X<sub>A</sub>), B(X<sub>B</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>) output wires yellow, green, blue and purple.<br/>
 Note: resistor used in series to limit current around 10mA (390Ω	- 470Ω).  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red Opto boards have LMC662CM (Dual Op Amp) acting as output buffer with 21-22mA limits<br/>
 Buttons 1-6, plus 9-select(coin), and 10-start(player)<br/>
