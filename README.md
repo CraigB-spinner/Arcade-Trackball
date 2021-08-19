@@ -38,17 +38,17 @@ Code uses Atmega32u4 ports directly because that's faster (over x30) than using 
 **Extra info:**<br/>
 Wiring: [See diagram](Pics/Trackball%20Sketch_bb.jpg) <br/>
 Vcc (+5V) and Gnd output wires red and black<br/>
-Trackball A(X<sub>A</sub>), B(X<sub>B</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>) output wires yellow, green, blue and purple.<br/>
+Trackball A(X<sub>A</sub>), B(X<sub>B</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>) output wires purple, blue, green and yellow.<br/>
 Note: resistor used in series to limit current around 10mA (390Ω	- 470Ω).  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red Opto boards have LMC662CM (Dual Op Amp) acting as output buffer with 21-22mA limits<br/>
 Buttons 1-6, plus 9-select(coin), and 10-start(player)<br/>
 
 Pin |Data |Button/wire  |Code
 --- |---- |------------ |----
-0   |D1   |Y<sub>B</sub> trackball - Purple |PinC
-1   |D0   |Y<sub>A</sub> trackball - Blue |PinD
-2   |D2   |X<sub>B</sub> trackball - Green |PinA
-3   |D3   |X<sub>A</sub> trackball - Yellow |PinB
+0   |D1   |Y<sub>B</sub> trackball - Yellow |PD3/PinC
+1   |D0   |Y<sub>A</sub> trackball - Green |PD2/PinD
+2   |D2   |X<sub>B</sub> trackball - Blue |PD1/PinA
+3   |D3   |X<sub>A</sub> trackball - Purple |PD0/PinB
 4   |D4   |Button 1 - X
 5   |D5   |Button 2 - A
 6   |D6   |Button 3 - B
