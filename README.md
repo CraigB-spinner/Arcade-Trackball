@@ -39,7 +39,7 @@ Code uses Atmega32u4 ports directly because that's faster (over x30) than using 
 Wiring: [See diagram](Pics/Trackball%20Sketch_fix_bb.jpg) <br/>
 Vcc (+5V) and Gnd output wires red and black<br/>
 Trackball A(X<sub>B</sub>), B(X<sub>A</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>) output wires purple, blue, yellow and green.  
-<sup>Colours match generic Atari/Happ Game Elf (138-in-1) 10 pin wire harness,  
+<sup>Colours match generic Atari/Happ Game Elf (138-in-1) 10 pin wire harness, <br/>
 Suzo/Happ 6 pin wire harness uses same colours but flip-flop to X & Y axes.</sup><br/>
 Note: resistor used in series to limit current around 10mA (390Ω	- 470Ω).  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red Opto boards have LMC662CM (Dual Op Amp) acting as output buffer with 21-22mA limits<br/>
