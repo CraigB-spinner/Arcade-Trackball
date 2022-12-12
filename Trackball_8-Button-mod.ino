@@ -355,22 +355,22 @@ void loop(){
   int button = 0;
   do {
     switch ( button ) {
-      case 0:  //on digital pin 4, PD4 - Arcade Button 1
+      case 0:  //on digital pin 4, PD4 - Arcade Button 1 - X
         currentButtonState = (PIND & xPD4) >> 4;
         break;
-      case 1:  //on digital pin 5, PC6 - Arcade Button 2
+      case 1:  //on digital pin 5, PC6 - Arcade Button 2 - A
         currentButtonState = (PINC & xPC6) >> 6;
         break;
-      case 2:  //on digital pin 6, PD7 - Arcade Button 3
+      case 2:  //on digital pin 6, PD7 - Arcade Button 3 - B
         currentButtonState = (PIND & xPD7) >> 7;
         break;
-      case 3:  //on digital pin 7, PE6 - Arcade Button 4
+      case 3:  //on digital pin 7, PE6 - Arcade Button 4 - Y
         currentButtonState = (PINE & xPE6) >> 6;
         break;
-      case 4:  //on digital pin 8, PB4 - Arcade Button 5
+      case 4:  //on digital pin 8, PB4 - Arcade Button 5 - L
         currentButtonState = (PINB & xPB4) >> 4;
         break;
-      case 5:  //on digital pin 9, PB5 - Arcade Button 6
+      case 5:  //on digital pin 9, PB5 - Arcade Button 6 - R
         currentButtonState = (PINB & xPB5) >> 5;
         break;
 #ifdef axisEnable
@@ -437,7 +437,10 @@ void loop(){
                 Joystick.setYAxis(1023);
               break;
             default: //Extra digital pins
-                Joystick.setButton(button, !currentButtonState);
+               if (button == 0) 
+                 Joystick.setButton(2, !currentButtonState); //Button 3(B) is used for Left, set Button 1 as B
+               else 
+                 Joystick.setButton(button, !currentButtonState);
               break;                    }
         } 
       } else //joyStOn is off
