@@ -11,7 +11,8 @@ At sub $10 USD, it is a substitute to Ultimarc's U-HID Nano @ $35 + shipping - Y
 **Jan. 15/21:** Uploaded new code for Trackball six colour rotation using a RGB 5050 LED Strip.  
 <sup>(Use of programmer is required to unprogram fuse bit, JTAGEN = 1)</sup>  
 **Jan. 26/21:** Uploaded new code for Mouse only Trackball operation. Note: all buttons can be inactivated for Trackball-Only operation.  
-**Feb. 19/21:** Updated code for Trackball six colour RGB 5050 LED Strip.
+**Feb. 19/21:** Updated code for Trackball six colour RGB 5050 LED Strip.  
+**Dec. 30/22:** Uploaded new code for Mouse vari-SpinSpeed Trackball (can be used in MiSTer FPGA Cores where device too sensitive)
 <br/><br/>
 This project uses an Arduino Pro Micro clone, arcade trackball(Atari/Happ style), with 8 buttons (up to 10) for use with MAME or any other emulator which can use x/y axes of mouse device as a trackball controller. Code should work on any board using an ATmega32U4 as long as port pins are mapped to same "digital pins" as [Pro Micro](Pics/Arduino%20Pro%20Micro%20Atmega32u4.jpg).  
 To construct, you will need an older non-PS/2 style trackball which can operate at 5v along with your momentary switches affixed to an Arduino micro controller. 
@@ -74,7 +75,7 @@ You can assign buttons to any assignment in RetroArch but it is best to pick a c
 Some [trouble shooting](trouble_shoot.md) with your controller  
    
 **The Code:**<br/>
-There are four versions of code: Pick your code to use
+There are five versions of code: Pick your code to use
 - Standard Mouse and Joystick buttons version  
   - [Trackball_8-Button.ino](Trackball_8-Button.ino)
 - Special Mouse only version with & without Mouse buttons - no Joystick buttons
@@ -82,7 +83,9 @@ There are four versions of code: Pick your code to use
 - Standard Mouse and Joystick buttons version - mod Joystick directions (use buttons for menu)
   - [Trackball_8-Button-mod.ino](Trackball_8-Button-mod.ino) <sub> 1.</sub><br/>
 - Standard Mouse and Joystick buttons version - mod RGB Trackball and Joystick directions
-  - [Trackball_8-Button-mod-rgb.ino](Trackball_8-Button-mod-rgb.ino) <sub> 1. 2.</sub> Update is available... parts arrived & tested.<br/>
+  - [Trackball_8-Button-mod-rgb.ino](Trackball_8-Button-mod-rgb.ino) <sub> 1. 2.</sub> Update is available... parts arrived & tested.<br/>  
+- Special Mouse vari--SpinSpeed version - 6 +2 +1 buttons  
+  - [Trackball_6-Button-MiSTer.ino](No_code_6-Button-MiSTer.ino)<br/>
 
 <sub>1. Used two TTP223 Capacitive Touch switches to control special functions: the 
 "[Touch Switches](Pics/Double%20Touch.jpg)" and 
