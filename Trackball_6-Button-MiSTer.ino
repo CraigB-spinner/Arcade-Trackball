@@ -272,37 +272,41 @@ void loop(){
 #ifdef ACCS
   //If the encoder has moved 1-50 or more transitions move the mouse in the appropriate direction 
   //and update the position variable to reflect that we moved the mouse. Accelerated move.
-//  Process Y-axis
+//  Process X-axis
+  rotMultiX = 0;
   if (rotPositionX >= rotCtrLmt || rotPositionX <= -rotCtrLmt) {
     rotCtr = 0;
     while (rotPositionX >= rotCtrLmt) {
       rotPositionX -= rotCtrLmt;
       rotCtr++; }
-    if (rotCtr) 
+    if (rotCtr != 0) 
 #ifdef ACCSX
       rotMultiX = rotCtr << ACCSX;
 #else
       rotMultiX = rotCtr;
 #endif 
-
+//    else
+//      rotMultiX = 0;
+      
     rotCtr = 0;
     while (rotPositionX <= -rotCtrLmt) {
       rotPositionX += rotCtrLmt;
       rotCtr++; }
-    if (rotCtr) 
+    if (rotCtr != 0) 
 #ifdef ACCSX
-      rotMultiX = -rotCtr << ACCSX;
+      rotMultiX = -(rotCtr << ACCSX);
 #else
       rotMultiX = -rotCtr;
 #endif 
   }
 //  Process Y-axis
-  else if (rotPositionY >= rotCtrLmt || rotPositionY <= -rotCtrLmt) { 
+  rotMultiY = 0;
+  if (rotPositionY >= rotCtrLmt || rotPositionY <= -rotCtrLmt) { 
     rotCtr = 0;
     while (rotPositionY >= rotCtrLmt) {
       rotPositionY -= rotCtrLmt;
       rotCtr++; }
-    if (rotCtr) 
+    if (rotCtr != 0) 
 #ifdef ACCSX
       rotMultiY = rotCtr << ACCSX;
 #else
@@ -313,9 +317,9 @@ void loop(){
     while (rotPositionY <= -rotCtrLmt) {
       rotPositionY += rotCtrLmt;
       rotCtr++; }
-    if (rotCtr) 
+    if (rotCtr != 0) 
 #ifdef ACCSX
-      rotMultiY = -rotCtr << ACCSX;
+      rotMultiY = -(rotCtr << ACCSX);
 #else
       rotMultiY = -rotCtr;
 #endif 
@@ -419,7 +423,7 @@ void loop(){
 #ifdef axisEnable
       if (button == axisEnable ) { //change x-axis enable status
         xAxis = !xAxis;
-      } else
+      } 
 #endif
       
 //    - add if button and state logic to control Mouse.press() or Mouse.release() activity
@@ -460,7 +464,6 @@ void loop(){
     }
     ++button;
   } while (button < maxBut);
-
 }
 
 void proc_SpinSpeed(int currentButtonState, 
