@@ -82,7 +82,7 @@ Fuse bits are only changed when you do a physical write by click on `Write`
 **Proceed at own risk.**  
 
 Good Luck - and May the Trackball Twinkle in Multiple Colours!  
-  </BR>
+  <BR/>
 ## **Oops - I bricked my Bootloader!** 
 I did this by mistake by switching between Arduino Leonardo and Sparkfun Pro Micro 5V (defaults to 3.3V, first in list).  
 I tried to flash the bootloader from Arduino IDE under Tools, Programmer: "USBtinyISP" (my ISP or ASP used), Burn Bootloader; with no luck. 
@@ -101,4 +101,4 @@ Unplug your ISP cable harnesses (two 3 wire 4 pin plugs) and plug-in micro USB i
 Test using Blinky_lights (adjust delays for secret hand-shake) using normal Upload icon.  
 Re-load new sketch (software) again!  
 **FIXED!!!**
-</BR>
+<BR/>
