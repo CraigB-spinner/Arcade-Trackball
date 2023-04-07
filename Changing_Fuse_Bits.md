@@ -84,12 +84,13 @@ Fuse bits are only changed when you do a physical write by click on `Write`
 Good Luck - and May the Trackball Twinkle in Multiple Colours!  
   <BR/>
 ## **Oops - I bricked my Bootloader!** 
-I did this by mistake by switching between Arduino Leonardo and Sparkfun Pro Micro 5V (defaults to 3.3V, first in list).  
+I did this by mistake when switching between Arduino Leonardo and Sparkfun Pro Micro 5V (defaults to 3.3V, first in list) Boards.  
 I tried to flash the bootloader from Arduino IDE under Tools, Programmer: "USBtinyISP" (my ISP or ASP used), Burn Bootloader; with no luck. 
 Windows does not recognize device as USB HID and LEDs do wierd flashing, no 2nd COM port registered in Arduino IDE.
 
 Part Deux: Flash the NAND using **AVRDUDESS** direct.  
 Oh! where or where did Sparkfun hide **Bootloader.hex**!  
+(you find Leonardo; where ask Raphael, Donatello, & Michelangelo - **TMNT**)  
 - Use bootloaders -> [download here](https://github.com/sparkfun/SF32u4_boards/archive/master.zip)  
 - Unzip folder - *Remember...*  
 - Start AVRDUDESS  
