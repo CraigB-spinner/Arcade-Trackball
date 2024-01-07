@@ -1,6 +1,5 @@
 ## **Arcade-Trackball** 
-Arcade Trackball - based off Spinner version 2
-
+Arcade Trackball - based off Spinner version 2 <br/><br/>
 [![Trackball](Pics/IMG_3843.jpg)](Pics/IMG_3843a.jpg)  
 **Using an Arduino Pro Micro - DIY Trackball Controller**  
 At sub $10 USD, it is a substitute to Ultimarc's U-HID Nano @ $35 + shipping - You do the HID device coding...<br/><br/> 
