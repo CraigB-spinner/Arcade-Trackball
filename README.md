@@ -36,7 +36,8 @@ This device will be detected as both mouse and gamepad/joystick. RetroPie requir
 Code uses Atmega32u4 ports directly because that's faster (over x30) than using digitalRead/Write. No button debouncing is setup, but can be added depending on your hardware issues.<br/><br/>
 
 **Extra info:**<br/>
-Wiring: [See diagram](Pics/Trackball%20Sketch_fix_bb.jpg) <br/>
+Wiring: [See diagram](Pics/Trackball%20Sketch_fix_bb.jpg) [2x5 Xonnector](Pics/Trackball%202x5%20pin%20connector.jpg)
+<br/>
 Vcc (+5V) and Gnd output wires red and black<br/>
 Trackball A(X<sub>B</sub>), B(X<sub>A</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>) output wires blue, purple, yellow and green.  
 <sup>Colours match generic Game Elf 10 pin wire harness, Suzo/Happ 6 pin wire harness uses same colours but flip-flop X & Y axes.</sup><br/>
