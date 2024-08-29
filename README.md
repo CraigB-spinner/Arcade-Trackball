@@ -36,8 +36,8 @@ This device will be detected as both mouse and gamepad/joystick. RetroPie requir
 Code uses Atmega32u4 ports directly because that's faster (over x30) than using digitalRead/Write. No button debouncing is setup, but can be added depending on your hardware issues.<br/><br/>
 
 **Extra info:**<br/>
-Wiring: [See diagram](Pics/Trackball%20Sketch_fix_bb.jpg), [2x5 pinout](Pics/Trackball%202x5%20pin%20connector.jpg)
-<br/>
+Wiring: [See diagram](Pics/Trackball%20Sketch_fix_bb.jpg), [2x5 pinout](Pics/Trackball%202x5%20pin%20connector.jpg), 
+[2x5 conn](Finished%20pictures/ATmega32U4%20wired%20inside.jpg) image (lower left Red-Purple-Yellow)<br/>
 Vcc (+5V) and Gnd output wires red and black<br/>
 Trackball A(X<sub>B</sub>), B(X<sub>A</sub>), C(Y<sub>A</sub>) & D(Y<sub>B</sub>) output wires blue, purple, yellow and green.  
 <sup>Colours match generic Game Elf 10 pin wire harness, Suzo/Happ 6 pin wire harness uses same colours but flip-flop X & Y axes.</sup><br/>
@@ -45,8 +45,8 @@ Note: resistor used in series to limit current around 10mA (390Ω	- 470Ω).
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red Opto boards have LMC662CM (Dual Op Amp) acting as output buffer with 21-22mA limits<br/>
 Buttons 1-6, plus 9-select(coin), and 10-start(player)<br/>
 
-Pin |Data |Button/wire  |Code |2x5 Con
---- |---- |------------ |---- |-------
+Pin |Data |Button/wire  |Code |2x5 Conn
+--- |---- |------------ |---- |--------
 0   |D1   |Y<sub>A</sub> trackball - Yellow |PD3/PinC|Ay- (5)
 1   |D0   |Y<sub>B</sub> trackball - Green |PD2/PinD|Ay+ (4)
 2   |D2   |X<sub>B</sub> trackball - Blue |PD1/PinA|Ax+ (2)
