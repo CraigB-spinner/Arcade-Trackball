@@ -22,7 +22,7 @@ This trackball, [RA-TRACKBALL-2](Pics/Retro%20Arcade%203in%20Trackball%20and%20H
 [**RA-TRACKBALL-2**](Pics/RA-TRACKBALL-2-GameElf-412-in-1.jpg) Game Elf 412-in-1 Harness<br/>
 [**ATmega32U4**](https://www.amazon.ca/gp/product/B01N4TVIQX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) used (clone of SparkFun Pro Micro)<br/><br/> 
 
-**How does a Trackball wwork**  
+**How does a Trackball work**  
 Simple explaination, a trackball is a dual digital rotary encoder with each axis actiong as a quadrature input device or spinner. Instead of turning the spinner knob directly, a ball contacts either roller that twists/turns the individual encoder. A rotary encoder have dual A & B phases with low/high or high/low signal transistions. One phase will always follow another phase due to a physical offset with a complete cycle producing 4 pulses or quadrature signal. Only rwo temperal dual states of AB or BA signals need to be deciphered from eight out of sixteen valid combinations. Two sets of four will indicate clockwise or counter-clockwise movement. A signal of AA, BB or similar will indicate an invalid transistion state or bounce and be ignored.<br/><br/>
 
 You will need Arduino joystick library at: [https://github.com/MHeironimus/ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary) <br/>
