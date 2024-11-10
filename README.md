@@ -17,9 +17,9 @@ This project uses an Arduino Pro Micro clone, arcade trackball(Atari/Happ style)
 To construct, you will need an older non-PS/2 style trackball which can operate at 5v along with your momentary switches affixed to an Arduino micro controller. 
 This trackball, [RA-TRACKBALL-2](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), uses [red Opto boards](Pics/Red_Board_Pinout.jpg), A052-1011-00, and not a green PS/2 Opto board pair. The green board pair can suffer from backspin. USB+PS2 Mouse MCU controller, HT82M98A, runs at 6 MHz and historically experience dropped signals of Quadrature transistions during rapid movement. Coding your own HID controller with ATmega32U4 is one reason why I used RA-TRACKBALL-2 Trackball, plus it is cheaper. It is unknown if a Jamma 60-in-1 (6-pin header) style trackball uses quadrature rotary encoder pulses for x/y axes like the Game Elf Jamma 138/276/352/485/619/1162-in-1, etc. (10-pin header/dual player) boards; or the board outputs PS/2 (DIR/CLK) protocol. AliExpress does show a Jamma 60-in-1 board with trackball using 6-pin header & 10-pin header harness, but would require a closer look at encoder boards.<br/> 
 [**TrackBall**](https://www.amazon.ca/gp/product/B00F1YQH6G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) used (clone of SuzoHapp style trackball by RetroArcade.us)<br/>
-[RA-TRACKBALL No Harness](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), 
-[RA-TRACKBALL-1 Jamma 60-in-1 Harness](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg), 
-[RA-TRACKBALL-2 Game Elf 412-in-1 Harness](Pics/Retro%20Arcade%203in%20Trackball%20and%20Harness.jpg)<br/>
+[RA-TRACKBALL No Harness](Pics/RA-TRACK-BALL-No-Harness.jpg), 
+[RA-TRACKBALL-1 Jamma 60-in-1 Harness](Pics/RA-TRACKBALL-1-Jamma-60-in-1.jpg), 
+[RA-TRACKBALL-2 Game Elf 412-in-1 Harness](Pics/RA-TRACKBALL-2-GameElf-412-in-1.jpg)<br/>
 [**ATmega32U4**](https://www.amazon.ca/gp/product/B01N4TVIQX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) used (clone of SparkFun Pro Micro)<br/><br/> 
 
 You will need Arduino joystick library at: [https://github.com/MHeironimus/ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary) <br/>
