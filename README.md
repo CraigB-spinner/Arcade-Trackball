@@ -25,14 +25,14 @@ This trackball, [RA-TRACKBALL-2](Pics/Retro%20Arcade%203in%20Trackball%20and%20H
 
 
 **How does a Trackball work**  
-Simple explaination, a trackball is a dual digital rotary encoder with each axis, x or y, acting as quadrature input device or spinner. Instead of turning spinner knob directly, a ball contacts either/both roller that twists/turns individual axis encoder. A rotary encoder have dual A & B phases with low/high or high/low signal transistions. One phase will always follow another phase due to a physical offset with a complete cycle producing 4 pulses (A<sub>L→H</sub>, B<sub>L→H</sub>, A<sub>H→L</sub>, B<sub>H→L</sub>, repeat) or quadrature signal. Only two temperal AB states (before/after) require capturing of AB or BA signals to decipher eight valid sequences out of sixteen total combinations. Two sets of four will indicate clockwise or counter-clockwise movement.  
+Simple explaination, a trackball is a dual digital rotary encoder with each axis, x or y, acting as quadrature input device or spinner. Instead of turning spinner knob directly, a ball contacts either/both roller that twists/turns individual axis encoder. A rotary encoder have dual A & B phases with low/high or high/low signal transistions. One phase will always follow another phase due to a physical offset with a complete cycle producing 4 pulses (A<sub>L→H</sub>, B<sub>L→H</sub>, A<sub>H→L</sub>, B<sub>H→L</sub>, repeat) or quadrature signal. Only two temperal AB states (before/after) require capturing of AB or BA signals to decipher eight valid sequences out of sixteen total combinations. Two sets of four will indicate clockwise or counter-clockwise movement. A signal of AA, BB or similar will suggest invalid transitions or bounce states and should be ignored.  
 clockwise   (A<sub>L→H</sub>, B<sub>L→H</sub>, A<sub>H→L</sub>, B<sub>H→L</sub>)  
 A<sub>L→H</sub> **:** A<sub>L</sub>B<sub>L</sub>A<sub>H</sub>B<sub>L</sub>, B<sub>L→H</sub> **:** A<sub>H</sub>B<sub>L</sub>A<sub>H</sub>B<sub>H</sub>, 
 A<sub>H→L</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>L</sub>B<sub>H</sub>, B<sub>H→L</sub> **:** A<sub>L</sub>B<sub>H</sub>A<sub>L</sub>B<sub>L</sub>  
 counter-clockwise (B<sub>L→H</sub>, A<sub>L→H</sub>, B<sub>H→L</sub>, A<sub>H→L</sub>)  
 B<sub>L→H</sub> **:** A<sub>L</sub>B<sub>L</sub>A<sub>L</sub>B<sub>H</sub>, A<sub>L→H</sub> **:** A<sub>L</sub>B<sub>H</sub>A<sub>H</sub>B<sub>H</sub>,
-B<sub>H→L</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>H</sub>B<sub>L</sub>, A<sub>H→L</sub> **:** A<sub>H</sub>B<sub>L</sub>A<sub>L</sub>B<sub>L</sub>   
-A signal of AA, BB or similar will suggest invalid transitions or bounce states and should be ignored.<br/><br/>
+B<sub>H→L</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>H</sub>B<sub>L</sub>, A<sub>H→L</sub> **:** A<sub>H</sub>B<sub>L</sub>A<sub>L</sub>B<sub>L</sub>  
+<br/><br/>
 
 You will need Arduino joystick library at: [https://github.com/MHeironimus/ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary) <br/>
 Matthew Heironimus joystick code: [Joystick.cpp](https://github.com/MHeironimus/ArduinoJoystickLibrary/blob/master/src/Joystick.cpp) & 
