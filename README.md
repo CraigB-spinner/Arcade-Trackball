@@ -21,13 +21,13 @@ This trackball, [RA-TRACKBALL-2](Pics/Retro%20Arcade%203in%20Trackball%20and%20H
 [**RA-TRACKBALL-1**](Pics/RA-TRACKBALL-1-Jamma-60-in-1.jpg) Jamma 60-in-1 Harness,  
 [**RA-TRACKBALL-2**](Pics/RA-TRACKBALL-2-GameElf-412-in-1.jpg) Game Elf 412-in-1 Harness<br/>
 [**ATmega32U4**](https://www.amazon.ca/gp/product/B01N4TVIQX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) used (clone of SparkFun Pro Micro)<br/><br/> 
-0b0010 0b1011 0b1101 0b0100   
+
+clockwise  
 A<sub>L→H</sub> **:** A<sub>L</sub>B<sub>L</sub>A<sub>H</sub>B<sub>L</sub>, B<sub>L→H</sub> **:** A<sub>H</sub>B<sub>L</sub>A<sub>H</sub>B<sub>H</sub>, 
 A<sub>H→L</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>L</sub>B<sub>H</sub>, B<sub>H→L</sub> **:** A<sub>L</sub>B<sub>H</sub>A<sub>L</sub>B<sub>L</sub>  
-A<sub>L→H</sub> B<sub>L→H</sub> A<sub>L→H</sub> B<sub>L→H</sub>  
-0b0001 0b0111 0b1110 0b1000  
+counyer-clockwise  
 B<sub>L→H</sub> **:** A<sub>L</sub>B<sub>L</sub>A<sub>L</sub>B<sub>H</sub>, A<sub>L→H</sub> **:** A<sub>L</sub>B<sub>H</sub>A<sub>H</sub>B<sub>H</sub>,
-B<sub>H→L</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>H</sub>B<sub>L</sub> A<sub>H→L</sub> **:** 
+B<sub>H→L</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>H</sub>B<sub>L</sub>, A<sub>H→L</sub> **:** A<sub>H</sub>B<sub>L</sub>A<sub>L</sub>B<sub>L</sub>
 
 **How does a Trackball work**  
 Simple explaination, a trackball is a dual digital rotary encoder with each axis, x or y, acting as quadrature input device or spinner. Instead of turning spinner knob directly, a ball contacts either/both roller that twists/turns individual axis encoder. A rotary encoder have dual A & B phases with low/high or high/low signal transistions. One phase will always follow another phase due to a physical offset with a complete cycle producing 4 pulses (A<sub>L→H</sub>, B<sub>L→H</sub>, A<sub>H→L</sub>, B<sub>H→L</sub>, repeat) or quadrature signal. Only two temperal AB states (before/after) require capturing of AB or BA signals to decipher eight valid sequences out of sixteen total combinations. Two sets of four will indicate clockwise or counter-clockwise movement. A signal of AA, BB or similar will suggest invalid transitions or bounce states and should be ignored.<br/><br/>
