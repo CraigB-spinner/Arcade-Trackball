@@ -22,10 +22,10 @@ This trackball, [RA-TRACKBALL-2](Pics/Retro%20Arcade%203in%20Trackball%20and%20H
 [**RA-TRACKBALL-2**](Pics/RA-TRACKBALL-2-GameElf-412-in-1.jpg) Game Elf 412-in-1 Harness<br/>
 [**ATmega32U4**](https://www.amazon.ca/gp/product/B01N4TVIQX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) used (clone of SparkFun Pro Micro)<br/><br/> 
 
-clockwise  
+clockwise   (A<sub>L→H</sub>, B<sub>L→H</sub>, A<sub>H→L</sub>, B<sub>H→L</sub>)  
 A<sub>L→H</sub> **:** A<sub>L</sub>B<sub>L</sub>A<sub>H</sub>B<sub>L</sub>, B<sub>L→H</sub> **:** A<sub>H</sub>B<sub>L</sub>A<sub>H</sub>B<sub>H</sub>, 
 A<sub>H→L</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>L</sub>B<sub>H</sub>, B<sub>H→L</sub> **:** A<sub>L</sub>B<sub>H</sub>A<sub>L</sub>B<sub>L</sub>  
-counyer-clockwise  
+counter-clockwise (B<sub>L→H</sub>, A<sub>L→H</sub>, B<sub>H→L</sub>, A<sub>H→L</sub>) 
 B<sub>L→H</sub> **:** A<sub>L</sub>B<sub>L</sub>A<sub>L</sub>B<sub>H</sub>, A<sub>L→H</sub> **:** A<sub>L</sub>B<sub>H</sub>A<sub>H</sub>B<sub>H</sub>,
 B<sub>H→L</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>H</sub>B<sub>L</sub>, A<sub>H→L</sub> **:** A<sub>H</sub>B<sub>L</sub>A<sub>L</sub>B<sub>L</sub>
 
