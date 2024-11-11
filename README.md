@@ -23,7 +23,7 @@ This trackball, [RA-TRACKBALL-2](Pics/Retro%20Arcade%203in%20Trackball%20and%20H
 [**ATmega32U4**](https://www.amazon.ca/gp/product/B01N4TVIQX/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) used (clone of SparkFun Pro Micro)<br/><br/> 
 0b0010 0b1011 0b1101 0b0100   
 A<sub>L→H</sub>:A<sub>L</sub>B<sub>L</sub>A<sub>H</sub>B<sub>L</sub>, B<sub>L→H</sub>:A<sub>H</sub>B<sub>L</sub>A<sub>H</sub>B<sub>H</sub>, 
-A<sub>L→H</sub>**:**A<sub>H</sub>B<sub>H</sub>A<sub>L</sub>B<sub>H</sub>, A<sub>L</sub>B<sub>H</sub>A<sub>L</sub>B<sub>L</sub>  
+A<sub>L→H</sub> **:** A<sub>H</sub>B<sub>H</sub>A<sub>L</sub>B<sub>H</sub>, A<sub>L</sub>B<sub>H</sub>A<sub>L</sub>B<sub>L</sub>  
 A<sub>L→H</sub> B<sub>L→H</sub> A<sub>L→H</sub> B<sub>L→H</sub>  
 0b0001 0b0111 0b1110 0b1000  
 **How does a Trackball work**  
